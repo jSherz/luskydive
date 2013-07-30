@@ -1,1 +1,95 @@
-// Your custom SCSS should be written here...
+@import "compass/css3/transition";
+
+/*
+  Colours
+*/
+$lsd-blue: #009ad5;
+$lsd-yellow: #fdda00;
+$lsd-red: #ea0005;
+
+/*
+  Styling
+*/
+body {
+  background-color: #f2f2f2
+}
+
+#wrapper {
+  height: 100%;
+  margin: 0 auto;
+}
+
+#header, #content, #footer {
+  @include row;
+
+  &>div {
+    @include column(12);
+    padding: 10px;
+  }
+}
+
+#header {
+  img {
+    width: 400px;
+  }
+
+  #logo {
+    float: left;
+  }
+
+  #menu {
+    float: right;
+    text-align: right;
+  }
+
+  ul {
+    margin-top: 10px;
+  }
+
+  li {
+    a {
+      display: inline-block;
+      width: 200px;
+      background-color: #eee;
+      padding: 5px 10px 5px 0;
+      color: #000;
+      text-transform: uppercase;
+
+      @include transition(0.2s background-color, color);
+
+      &:hover {
+        background-color: $lsd-blue;
+      }
+
+      &:active {
+        background-color: darken($lsd-blue, 20%);
+        color: #fff;
+      }
+    }
+
+    &.active {
+      a {
+        background-color: lighten($lsd-yellow, 20%);
+      }
+    }
+  }
+
+  @include clearfix;
+}
+
+#content {
+  background-color: #fff;
+}
+
+#footer {
+  text-align: center;
+
+  p {
+    font-size: 0.75em;
+  }
+
+  a {
+    color: #888;
+    text-decoration: underline;
+  }
+}
