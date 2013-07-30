@@ -28,9 +28,12 @@ body {
   }
 }
 
+$logo-size: 360px;
+$menu-width: 200px;
+
 #header {
   img {
-    width: 400px;
+    width: $logo-size;
   }
 
   #logo {
@@ -40,16 +43,20 @@ body {
   #menu {
     float: right;
     text-align: right;
+
+    .control {
+      display: none;
+    }
   }
 
-  ul {
+  #menu_items {
     margin-top: 10px;
   }
 
   li {
     a {
       display: inline-block;
-      width: 200px;
+      width: $menu-width;
       background-color: #eee;
       padding: 5px 10px 5px 0;
       color: #000;
@@ -75,6 +82,51 @@ body {
   }
 
   @include clearfix;
+}
+
+// Mobile menu
+@include respond("max-width: #{$menu-width + $logo-size + 100px}") {
+  #logo, #menu {
+    float: none !important;
+  }
+
+  #menu {
+    li {
+      display: inline-block;
+      width: 100%;
+
+      a {
+        display: inline-block;
+        width: 100%;
+        padding: 10px;
+        background-color: #ccc;
+      }
+    }
+
+    .control {
+      display: block !important;
+      margin-bottom: -10px;
+
+      a {
+        background-color: #ccc;
+        font-weight: bold;
+
+        &:hover {
+          background-color: #ccc;
+        }
+      }
+    }
+  }
+
+  #menu_items {
+    display: none;
+  }
+}
+
+@include respond("min-width: #{$menu-width + $logo-size + 100px}") {
+  #menu_items {
+    display: block !important;
+  }
 }
 
 #content {

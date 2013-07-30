@@ -1859,10 +1859,11 @@ body { background-color: #f2f2f2; }
 @media only screen and (max-width: 767px) { #header > div, #content > div, #footer > div { float: left; margin-left: 0; width: 100%; } }
 
 #header { *zoom: 1; }
-#header img { width: 400px; }
+#header img { width: 360px; }
 #header #logo { float: left; }
 #header #menu { float: right; text-align: right; }
-#header ul { margin-top: 10px; }
+#header #menu .control { display: none; }
+#header #menu_items { margin-top: 10px; }
 #header li a { display: inline-block; width: 200px; background-color: #eee; padding: 5px 10px 5px 0; color: #000; text-transform: uppercase; -webkit-transition: 0.2s background-color, color; -moz-transition: 0.2s background-color, color; -o-transition: 0.2s background-color, color; transition: 0.2s background-color, color; }
 #header li a:hover { background-color: #009ad5; }
 #header li a:active { background-color: #00506f; color: #fff; }
@@ -1870,6 +1871,14 @@ body { background-color: #f2f2f2; }
 #header:before, #header:after { content: ""; display: table; }
 #header:after { clear: both; }
 
+@media only screen and (max-width: 660px) { #logo, #menu { float: none !important; }
+  #menu li { display: inline-block; width: 100%; }
+  #menu li a { display: inline-block; width: 100%; padding: 10px; background-color: #ccc; }
+  #menu .control { display: block !important; margin-bottom: -10px; }
+  #menu .control a { background-color: #ccc; font-weight: bold; }
+  #menu .control a:hover { background-color: #ccc; }
+  #menu_items { display: none; } }
+@media only screen and (min-width: 660px) { #menu_items { display: block !important; } }
 #content { background-color: #fff; }
 
 #footer { text-align: center; }
