@@ -1,4 +1,5 @@
 @import "compass/css3/transition";
+@import "compass/css3/border-radius";
 
 /*
   Colours
@@ -30,6 +31,11 @@ body {
 
   &>div {
     @include column(12);
+  }
+}
+
+#content, #footer {
+  &>div {
     padding: 10px;
   }
 }
@@ -38,6 +44,8 @@ $logo-size: 360px;
 $menu-width: 200px;
 
 #header {
+  padding-top: 10px;
+
   img {
     width: $logo-size;
   }
@@ -67,11 +75,14 @@ $menu-width: 200px;
       padding: 5px 10px 5px 0;
       color: #000;
       text-transform: uppercase;
+      border-right: solid 2px #000;
 
       @include transition(0.2s background-color, color);
+      @include transition(0.2s border-right);
 
       &:hover {
         background-color: $lsd-blue;
+        border-right: solid 10px #000;
       }
 
       &:active {
@@ -136,7 +147,19 @@ $menu-width: 200px;
 }
 
 #content {
-  background-color: #fff;
+  background: rgba(255, 255, 255, 0.75);
+  //@include border-radius(15px);
+  border: solid 2px #444;
+
+  div {
+    &:first-child {
+      padding-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
 }
 
 #footer {
@@ -147,7 +170,10 @@ $menu-width: 200px;
   }
 
   a {
-    color: #888;
     text-decoration: underline;
+  }
+
+  p, a {
+    color: #333;
   }
 }
