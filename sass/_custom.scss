@@ -11,7 +11,13 @@ $lsd-red: #ea0005;
   Styling
 */
 body {
-  background-color: #f2f2f2
+  background: #f2f2f2;
+}
+
+@include respond("min-width: 600px") {
+  body {
+    background: url('../images/bg.jpg') #f2f2f2;
+  }
 }
 
 #wrapper {
