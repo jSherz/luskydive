@@ -102,3 +102,19 @@ LOGGING = {
     }
 }
 
+TEMPLATE_CONTEXT_PROCESSORS = ("django.contrib.auth.context_processors.auth",
+                               "django.core.context_processors.debug",
+                               "django.core.context_processors.i18n",
+                               "django.core.context_processors.media",
+                               "django.core.context_processors.static",
+                               "django.core.context_processors.tz",
+                               "django.contrib.messages.context_processors.messages",
+                               'skydive.cust_context.cust_context')
+
+META = {
+    'site_title': 'Leeds Uni Skydivers',
+    'description': 'Leeds University Skydiving club.',
+    'keywords': 'leeds,university,uni,skydive,sky,dive,skydiving,club,society,union,freefall,tandem,aff,raps',
+    'fb_page_id': '18228677368',
+    'image': 'http://lsd.jsherz.com/static/images/socialimage.jpg',
+}
