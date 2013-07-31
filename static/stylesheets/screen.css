@@ -1867,7 +1867,7 @@ body { background: #f2f2f2; }
 #header #menu { float: right; text-align: right; }
 #header #menu .control { display: none; }
 #header #menu_items { margin-top: 10px; }
-#header li a { display: inline-block; width: 200px; background-color: #eee; padding: 5px 10px 5px 0; color: #000; text-transform: uppercase; border-right: solid 2px black; -webkit-transition: 0.2s background-color, color; -moz-transition: 0.2s background-color, color; -o-transition: 0.2s background-color, color; transition: 0.2s background-color, color; -webkit-transition: 0.2s border-right; -moz-transition: 0.2s border-right; -o-transition: 0.2s border-right; transition: 0.2s border-right; }
+#header li a { display: inline-block; width: 200px; background-color: #eee; padding: 5px 10px 5px 0; color: #000; text-transform: uppercase; border-right: solid 2px black; -webkit-transition: 0.2s border-right, 0.2s color, 0.2s background-color; -moz-transition: 0.2s border-right, 0.2s color, 0.2s background-color; -o-transition: 0.2s border-right, 0.2s color, 0.2s background-color; transition: 0.2s border-right, 0.2s color, 0.2s background-color; }
 #header li a:hover { background-color: #009ad5; border-right: solid 10px black; }
 #header li a:active { background-color: #00506f; color: #fff; }
 #header li.active a { background-color: #ffea64; }

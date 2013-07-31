@@ -77,8 +77,7 @@ $menu-width: 200px;
       text-transform: uppercase;
       border-right: solid 2px #000;
 
-      @include transition(0.2s background-color, color);
-      @include transition(0.2s border-right);
+      @include transition(0.2s border-right, 0.2s color, 0.2s background-color);
 
       &:hover {
         background-color: $lsd-blue;
