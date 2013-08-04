@@ -38,8 +38,45 @@
 </head>
 
 <body>
-{% block content %}
-{% endblock %}
+<div id="wrapper">
+    <div id="header">
+        <div>
+            <div id="logo">
+                <img src="{{ STATIC_URL }}images/header.png" alt="Leeds University Skydivers"
+                     title="Leeds University Skydivers">
+            </div>
+
+            <div id="menu">
+                <ul class="control">
+                    <li><a href="#"><i class="icon-menu"></i>Show Menu</a></li>
+                </ul>
+                <ul id="menu_items">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">Why skydive?</a></li>
+                    <li><a href="#">Learn to skydive</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">Contact us</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="content">
+        <div>
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+
+    <div id="footer">
+        <div>
+            <p>
+                Copyright &copy;{% now "Y" %} Leeds University Skydivers. Designed &amp; built by <a
+                    href="http://jsherz.com">jSherz</a>.
+            </p>
+        </div>
+    </div>
+</div>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="{{ STATIC_URL }}javascripts/libs/jquery-1.9.1.min.js"><\/script>')</script>
