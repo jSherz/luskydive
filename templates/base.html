@@ -1,4 +1,4 @@
-<!doctype html>
+{% load skydive_extras %}<!doctype html>
 <!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
@@ -53,11 +53,11 @@
                     <li><a href="#"><i class="icon-menu"></i>Show Menu</a></li>
                 </ul>
                 <ul id="menu_items">
-                    <li class="active"><a href="{% url 'home' %}">Home</a></li>
-                    <li><a href="{% url 'why_skydive' %}">Why skydive?</a></li>
-                    <li><a href="{% url 'learn_to_skydive' %}">Learn to skydive</a></li>
+                    <li{% active_link '^/$' %}><a href="{% url 'home' %}">Home</a></li>
+                    <li{% active_link '^/why-skydive$' %}><a href="{% url 'why_skydive' %}">Why skydive?</a></li>
+                    <li{% active_link '^/learn-to-skydive$' %}><a href="{% url 'learn_to_skydive' %}">Learn to skydive</a></li>
                     <li><a href="http://www.facebook.com/groups/shockabrah/photos/">Gallery</a></li>
-                    <li><a href="{% url 'contact_us' %}">Contact us</a></li>
+                    <li{% active_link '^/contact-us$' %}><a href="{% url 'contact_us' %}">Contact us</a></li>
                 </ul>
             </div>
         </div>
