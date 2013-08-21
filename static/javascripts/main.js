@@ -32,5 +32,57 @@ $(function () {
             $(this).html($(this).html().replace('Show', 'Hide'));
         }
     });
+
+    var bg = $('#background');
+    var bg_swap = $('#background-swap');
+
+    // Place bg in front of bg_swap
+    //bg.css('z-index', '-10');
+    //bg_swap.css('z-index', '-11');
+
+    var images = [
+        '/static/images/bg.jpg',
+        '/static/images/testbg.jpg',
+        '/static/images/testbg2.jpg',
+    ];
+
+    var current_image = 0;
+
+    function swap_it_bro(active, make_active, next_image) {
+        // Hide and load the new one
+        active.css('z-index', -9).removeClass('activebg').fadeOut(4000);
+        make_active.show().css('z-index', -10).css('background-image', 'url(' + next_image + ')').addClass('activebg');
+    }
+
+    function swap_backgrounds() {
+        // Next image
+        current_image++;
+        if (current_image == images.length) {
+            current_image = 0;
+        }
+
+        console.log('Next image is ' + images[current_image]);
+
+        // Load the new image
+        var loader = new Image();
+
+        loader.onload = function () {
+            console.log('Image loaded.');
+
+            if (bg.hasClass('activebg')) {
+                console.log('bg is active');
+
+                swap_it_bro(bg, bg_swap, images[current_image]);
+            } else {
+                console.log('bg_swap is active');
+
+                swap_it_bro(bg_swap, bg, images[current_image]);
+            }
+        }
+
+        loader.src = images[current_image];
+    }
+
+    setInterval(swap_backgrounds, 14000);
 });
 
