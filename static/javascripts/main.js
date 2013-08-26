@@ -84,8 +84,22 @@ $(function () {
         }
 
         loader.src = images[current_image];
+        $.cookie('last-bg', current_image);
     }
 
     setInterval(swap_backgrounds, 7000);
+
+    // Load last seen BG
+    var last_bg = $.cookie('last-bg');
+    if (last_bg != undefined) {
+        last_bg = parseInt(last_bg);
+
+        if (!isNaN(last_bg) && last_bg >= 0 && last_bg <= images.length) {
+            current_image = last_bg;
+
+            // Update CSS
+            $('#background').css('background', 'url(' + images[current_image] + ')');
+        }
+    }
 });
 
