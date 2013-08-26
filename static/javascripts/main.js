@@ -41,9 +41,12 @@ $(function () {
     //bg_swap.css('z-index', '-11');
 
     var images = [
-        '/static/images/bg.jpg',
-        '/static/images/testbg.jpg',
-        '/static/images/testbg2.jpg',
+        '/static/images/backgrounds/wingsuitrodeo.jpg',
+        '/static/images/backgrounds/tonguesout.jpg',
+        '/static/images/backgrounds/tube.jpg',
+        '/static/images/backgrounds/woahhhh.jpg',
+        '/static/images/backgrounds/canopy.jpg',
+        '/static/images/backgrounds/wingsuitback.jpg',
     ];
 
     var current_image = 0;
@@ -83,6 +86,6 @@ $(function () {
         loader.src = images[current_image];
     }
 
-    setInterval(swap_backgrounds, 14000);
+    setInterval(swap_backgrounds, 7000);
 });
 

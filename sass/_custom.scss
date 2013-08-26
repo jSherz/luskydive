@@ -12,7 +12,7 @@ $lsd-red: #ea0005;
   Styling
 */
 body {
-  background: #f2f2f2;
+  background: #fff;
 }
 
 h1 {
@@ -28,8 +28,8 @@ h3 {
 }
 
 @include respond("min-width: 600px") {
-  body {
-    background: pink;
+  #background {
+    background: url('../images/backgrounds/wingsuitrodeo.jpg');
   }
 }
 
@@ -197,12 +197,10 @@ $menu-width: 200px;
   height: 100%;
   position: absolute;
   z-index: -10;
+
+  background-size: cover;
 }
 
 .activebg {
-//  z-index: -9;
-}
-
-#background {
-  background: url('../images/bg.jpg');
+  //  z-index: -9;
 }
