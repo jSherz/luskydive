@@ -1712,7 +1712,8 @@ h2, h3 { font-family: Bangers; padding-top: 0; letter-spacing: 0.07em; }
 
 #links { margin-top: 10px; }
 #links li { display: inline-block; width: 19.5%; }
-#links a { display: block; padding: 10px; background-color: #fff; font-weight: bold; font-family: 'Patrick Hand SC', cursive; font-size: 1.6em; }
+#links a { display: block; padding: 10px; background-color: #fff; font-weight: bold; font-family: 'Patrick Hand SC', cursive; font-size: 1.6em; -webkit-transition: background-color 0.3s, color 0.3s; -moz-transition: background-color 0.3s, color 0.3s; -o-transition: background-color 0.3s, color 0.3s; transition: background-color 0.3s, color 0.3s; }
+#links a:hover { background-color: #000; color: #fff; }
 
 .text { margin-top: 10px; padding: 10px; }
 

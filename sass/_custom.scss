@@ -1,3 +1,4 @@
+@import "compass/css3/transition";
 @import url('http://fonts.googleapis.com/css?family=Leckerli+One|Patrick+Hand+SC|Bangers');
 
 $lsd_blue: #009dd9;
@@ -62,6 +63,13 @@ h2, h3 {
         font-weight: bold;
         font-family: 'Patrick Hand SC', cursive;
         font-size: 1.6em;
+
+        @include transition(background-color 0.3s, color 0.3s);
+
+        &:hover {
+            background-color: #000;
+            color: #fff;
+        }
     }
 }
 
