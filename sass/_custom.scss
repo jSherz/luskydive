@@ -1,1 +1,127 @@
-// Your custom SCSS should be written here...
+@import url('http://fonts.googleapis.com/css?family=Lobster|Patrick+Hand+SC|Bangers');
+
+$lsd_blue: #009dd9;
+$lsd_yellow: #fdda00;
+$lsd_red: #ea0005;
+
+body {
+    background: url(/images/bg_tile.png) repeat;
+}
+
+h2 {
+    font-family: Bangers;
+    padding-top: 0;
+    letter-spacing: 0.07em;
+}
+
+.content {
+    @include row;
+
+    & > div {
+        @include column(12);
+    }
+}
+
+#wrapper {
+    margin-top: 20px;
+}
+
+#header {
+    @include row;
+    text-align: center;    
+
+    h1 {   
+        font-family: 'Lobster', cursive;
+        font-size: 8rem;
+        line-height: 0.8em;
+        color: #000;
+
+        .lu {
+            font-size: 0.6em;
+            line-height: 0.9em;
+        }
+    }
+}
+
+#header_left, #header_right {
+    @include column(6);
+}
+
+#links {
+    margin-top: 10px;
+
+    li {
+        display: inline-block;
+        width: 19.5%;
+    }
+
+    a {
+        display: block;
+        padding: 10px;
+        background-color: #fff;
+        font-weight: bold;
+        font-family: 'Patrick Hand SC', cursive;
+        font-size: 1.6em;
+    }
+}
+
+.text {
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.bgblue {
+    background-color: lighten($lsd_blue, 49%);
+}
+
+.bgyellow {
+    background-color: lighten($lsd_yellow, 39%);
+}
+
+.bgred {
+    background-color: lighten($lsd_red, 49%);
+}
+
+#footer {
+    margin-top: 10px;
+    text-align: center;
+    color: #666;
+
+    a {
+        color: #444;
+        text-decoration: underline;
+    }
+}
+
+@include respond("max-width: 945px") {
+    #links {
+        li {
+            display: block;
+            width: 100%;
+        }
+    }
+}
+
+@include respond("max-width: 1080px") {
+    #header {
+        h1 {
+            font-size: 6rem;
+        }
+    }
+}
+
+@include respond("all-phones") {
+    #header {
+        img {
+            width: 350px;
+        }
+        h1 {
+            font-size: 4rem;
+            
+            .lu {
+                font-size: 0.8em;
+                display: block;
+            }
+        }
+    }
+}
