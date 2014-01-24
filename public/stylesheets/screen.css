@@ -1689,7 +1689,7 @@ table.rounded thead th, table.rounded thead td, table.rounded caption + tbody tr
 
 .ie9 .radio.checked i, .ie9 .checkbox.checked i { top: 0; }
 
-body { background: url(/images/bg_tile.png) repeat; }
+body { background: url(images/bg_tile.png) repeat; }
 
 h2, h3 { font-family: Bangers; padding-top: 0; letter-spacing: 0.07em; }
 
