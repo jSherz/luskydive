@@ -107,25 +107,6 @@ h2, h3 {
     }
 }
 
-#skydive_video {
-    width: 853px;
-    height: 480px;
-}
-
-@include respond("max-width: 880px") {
-    #skydive_video {
-        width: 640px;
-        height: 360px;
-    }
-}
-
-@include respond("max-width: 660px") {
-    #skydive_video {
-        width: 560px;
-        height: 315px;
-    }
-}
-
 @include respond("max-width: 945px") {
     #links {
         li {
