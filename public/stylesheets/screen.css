@@ -1726,6 +1726,10 @@ h2, h3 { font-family: Bangers; padding-top: 0; letter-spacing: 0.07em; }
 #footer { margin-top: 10px; text-align: center; color: #666; }
 #footer a { color: #444; text-decoration: underline; }
 
+#skydive_video { width: 853px; height: 480px; }
+
+@media only screen and (max-width: 880px) { #skydive_video { width: 640px; height: 360px; } }
+@media only screen and (max-width: 660px) { #skydive_video { width: 560px; height: 315px; } }
 @media only screen and (max-width: 945px) { #links li { display: block; width: 100%; } }
 @media only screen and (max-width: 1080px) { #header h1 { font-size: 6rem; } }
 @media only screen and (max-width: 767px) { #header img { width: 350px; }
