@@ -1723,6 +1723,8 @@ h2, h3 { font-family: Bangers; padding-top: 0; letter-spacing: 0.07em; }
 
 .bgred { background-color: #ffe5e5; }
 
+.feature { width: 300px; float: right; margin-left: 10px; }
+
 #footer { margin-top: 10px; text-align: center; color: #666; }
 #footer a { color: #444; text-decoration: underline; }
 
