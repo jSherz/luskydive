@@ -44,3 +44,8 @@ gem 'haml', '~>4.0.5'
 # Styling
 gem 'bourbon'
 gem 'neat'
+
+# Live refresh
+group :development do
+  gem 'guard-livereload', require: false
+end
