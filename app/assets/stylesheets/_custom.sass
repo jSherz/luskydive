@@ -1,8 +1,23 @@
 body
   overflow-y: scroll
 
+// General page structure
 #header, #content, #footer
   @include outer-container
 
+#content, #footer
   & > div
     @include span-columns(12)
+
+// Header
+#header
+  margin-top: 1em
+
+#header-logo
+  @include span-columns(5)
+
+  img
+    width: 100%
+
+#header-title
+  @include span-columns(7)
