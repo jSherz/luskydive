@@ -15,7 +15,8 @@
       -# Title logo & quick join
       #header
         #header-logo
-          = image_tag 'logo.png', alt: 'Leeds University Skydivers Logo', title: 'Leeds University Skydivers Logo'
+          = link_to root_url do
+            = image_tag 'logo.png', alt: 'Leeds University Skydivers Logo', title: 'Leeds University Skydivers Logo'
         #header-title
           %h1
             %span.lu
@@ -28,7 +29,7 @@
           %li
             %i.seperator.fa.fa-ellipsis-v
           %li
-            = link_to '#' do
+            = link_to root_url do
               Home
           %li
             %i.seperator.fa.fa-ellipsis-v
