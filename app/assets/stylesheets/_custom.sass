@@ -1,17 +1,19 @@
 body
   overflow-y: scroll
+  background: url(bg-tile.png) repeat fixed
 
 // General page structure
-#header, #content, #footer
+#header, #navbar, #content, #footer
   @include outer-container
 
-#content, #footer
+#navbar #content, #footer
   & > div
     @include span-columns(12)
 
 // Header
 #header
   margin-top: 1em
+  margin-bottom: 1em
 
 #header-logo
   @include span-columns(5)
@@ -21,3 +23,19 @@ body
 
 #header-title
   @include span-columns(7)
+
+  h1
+    font-size: 6.8rem
+    line-height: 0.8em
+    font-family: 'Leckerli One', cursive
+    font-weight: 300
+    text-align: center
+    margin-top: 0
+
+    .lu
+      font-size: 0.6em
+      line-height: 0.9em
+
+// Navigation
+#navbar
+  

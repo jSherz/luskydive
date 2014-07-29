@@ -16,7 +16,28 @@
           = image_tag 'logo.png', alt: 'Leeds University Skydivers Logo', title: 'Leeds University Skydivers Logo'
         #header-title
           %h1
-            Leeds Uni Skydivers
+            %span.lu
+              Leeds Uni
+            Skydivers
+
+      -# Navigation
+      #navbar
+        %ul
+          %li
+            = link_to '#' do
+              Home
+          %li
+            = link_to '#' do
+              Members
+          %li
+            = link_to '#' do
+              Events
+          %li
+            = link_to '#' do
+              Learn to Skydive
+          %li
+            = link_to '#' do
+              Book a Skydive
 
       -# Main content, replaced by child templates
       #content
