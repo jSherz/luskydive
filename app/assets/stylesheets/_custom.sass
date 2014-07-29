@@ -38,4 +38,27 @@ body
 
 // Navigation
 #navbar
-  
+  ul
+    padding: 0 0 0 0
+    background: #fff
+    border: solid 0.1em $lsd_blue
+
+  li
+    display: inline-block
+    list-style: none
+    padding: 0
+    margin: 0 0.2em
+
+    a
+      font-family: 'Patrick Hand SC'
+      letter-spacing: 0.05em
+      font-size: 1.2rem
+      padding: 1em 1em
+      display: block
+      color: darken($lsd_blue, 10%)
+      text-decoration: none
+      border-right
+
+      &:hover
+        text-decoration: underline
+        background: #eee
