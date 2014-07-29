@@ -1,0 +1,8 @@
+body
+  overflow-y: scroll
+
+#header, #content, #footer
+  @include outer-container
+
+  & > div
+    @include span-columns(12)

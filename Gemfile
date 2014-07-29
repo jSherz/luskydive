@@ -40,3 +40,7 @@ gem 'spring',        group: :development
 
 # Haml templates
 gem 'haml', '~>4.0.5'
+
+# Styling
+gem 'bourbon'
+gem 'neat'

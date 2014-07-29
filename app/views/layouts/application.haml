@@ -1,0 +1,34 @@
+!!!
+%html
+  %head
+    %title
+      Leeds Uni Skydivers
+
+    = stylesheet_link_tag 'application', media: 'all'
+
+    = csrf_meta_tags
+
+  %body
+    #wrapper
+      -# Title logo & quick join
+      #header
+        %div
+          %h1
+            Leeds Uni Skydivers
+
+      -# Main content, replaced by child templates
+      #content
+        %div
+          = yield
+
+      -# Social icons, copyright etc
+      #footer
+        %div
+          %p
+            &copy;
+            = Date.today.year
+            Leeds University Skydivers. Website sloppily hacked together by
+            = link_to 'http://jsherz.com' do
+              jSherz.
+
+    = javascript_include_tag 'application'
