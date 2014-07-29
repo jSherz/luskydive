@@ -1,0 +1,23 @@
+#events.main
+  %h2
+    Events
+
+  %p
+    Come down and meet us at
+    = link_to 'The Library Pub (Upstairs)', '#'
+    every week during term time!
+
+  %ul#events-list
+    - 5.times do
+      %li
+        .event-icon
+          %i.fa.fa-calendar
+        .event-description
+          %h3
+            Some event name
+          %p
+            Short description of how kewl & rad this event will be. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat.
+      %hr
