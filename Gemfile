@@ -43,6 +43,7 @@ gem 'haml', '~>4.0.5'
 
 # Styling
 gem 'bourbon'
+gem 'bitters'
 gem 'neat'
 
 # Live refresh
