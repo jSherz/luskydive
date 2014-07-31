@@ -1,0 +1,60 @@
+faqs:
+  {
+    'General FAQs': [
+      {
+        question: 'How much does it cost to join?',
+        answer: '£35.00 for the year, entitling you to cheaper socials, jump ticket deals and kit hire rates.',
+        weighting: 100
+      },
+      {
+        question: 'How do I join?',
+        answer: 'We recommend coming along to one of our socials (check the facebook group to find out when and where). After you''ve decided you were right, skydiving is the best idea ever, you can buy membership on the <a href="http://www.leedsuniversityunion.org.uk/groups/skydiving/" title="Skydiving on the Leeds University Union website.">Union page</a>',
+        weighting: 95
+      },
+      {
+        question: 'I''m not quite up for being a solo skydiver just yet, can I do a tandem?',
+        answer: 'Absolutely, just message a committee member or come along to a social and we''ll try and get you booked in as soon as possible. We do recommend going the solo route, as it''s cheaper and we know you''ll love skydiving as much as we do.',
+        weighting: 90
+      },
+      {
+        question: 'Are there any limiting factors?',
+        answer: 'There is a 16 stone weight limit to do a solo course and 15 stone to do a tandem. You also need a clean bill of health, or a doctor''s permission to jump.',
+        weighting: 85
+      },
+      {
+        question: 'Is it safe?',
+        answer: 'Skydiving is an ''extreme'' sport and with every extreme sport there are risks posed. However, there are measures taken to reduce these risks.
+                Our kit is of the highest standard, including easy to use square parachutes, allowing you to land gently and safely.
+                The kit also includes a reserve parachute, there in case your main parachute doesn''t function properly (extremely rare). This reserve parachute is maintained to the highest standard and is repacked every 6 months by a professional packer. Most of the club have never seen a reserve parachute flying over their head, even with hundreds of jumps.
+                All kits are also fitted with Automatic Activation Devices, equipment that will deploy your reserve parachute if you aren''t able to. This means if you pass out during freefall, your parachute will be deployed, meaning you can still land safely.
+                To be a skydiver, you undergo rigorous training, from ground school (your initial training) to regular briefs. You''ll receive this training until your final jump as a student skydiver, upon which you''ll be rewarded your A-license and be allowed to jump without an instructor. By this time, you''ll be fully trained and will be able to deal with any issues that may arise.
+                As much as the media portrays skydivers to be adrenaline junkies and thrill seekers, most of us merely enjoy the sport and wish for nothing more than to land safely after every jump. For more information about the safety of the sport, please visit our governing body''s page:
+                <a href="http://www.bpa.org.uk/staysafe/how-safe/">http://www.bpa.org.uk/staysafe/how-safe/</a>',
+        weighting: 80
+      },
+      {
+        question: 'Is it expensive?',
+        answer: 'Not really!
+                As a trainee skydiver, your jumps will be no more than £36.00 per skydive and after qualifying, they''ll be considerably less (from £16.00). The fact that we subsidise these prices makes learning to skydive at university the cheapest you will ever get it!
+                We also allow you to hire kit through the year, meaning we take care of the expensive maintenance and cost of having your own parachute until you are able to afford it yourself.',
+        weighting: 75
+      }
+    ],
+    'RAPs FAQs': [
+      {
+        question: 'How much does each jump cost?',
+        answer: 'We aim to subsidise training jumps down to £36.00 and experienced jumps to £16.00 or less this year.',
+        weighting: 100
+      },
+      {
+        question: 'How much is the initial training fee?',
+        answer: '£175.00 – this includes <strong>two jumps</strong> and all your training!',
+        weighting: 95
+      },
+      {
+        question: 'How many jumps will it be until I qualify as an experienced skydiver?',
+        answer: 'Every person is different and takes a slighly different amount of time to learn to skydive. The minimum is 28 jumps and most people take around 28-35.',
+        weighting: 90
+      }
+    ]
+  }

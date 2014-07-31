@@ -1,0 +1,16 @@
+#faqs-wrapper
+  %h2
+    FAQs
+
+  - @faq_categories.each do |faq_category|
+    %h3
+      = faq_category.name
+
+    %ul.faqs
+      - faq_category.faqs.each do |faq|
+        %li
+          %h4
+            %i.fa.fa-comment-o
+            = faq.question
+
+          = simple_format(raw(faq.answer))

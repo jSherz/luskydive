@@ -5,4 +5,8 @@ class ApplicationController < ActionController::Base
 
   def index
   end
+
+  def faqs
+    @faq_categories = FaqCategory.all
+  end
 end

@@ -1,7 +1,17 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+sample_data = YAML::load_file("#{Rails.root}/config/sample-data.yml")
+
+# Frequently asked questions
+Faq.delete_all
+FaqCategory.delete_all
+
+sample_data['faqs'].each do |faq_category, faqs|
+  # Create the category
+  category = FaqCategory.create name: faq_category
+
+  # Add all of the FAQs
+  faqs.each do |faq|
+    new_faq = Faq.create faq
+
+    category.faqs.push new_faq
+  end
+end
