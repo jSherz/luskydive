@@ -33,6 +33,11 @@
       -# Navigation
       #navbar
         %ul
+          %li.controls
+            %a{href: '#'}
+              %i.fa.fa-bars
+              %span
+                Show menu
           = navbar_link root_url, 'Home'
           = navbar_link '#', 'Members'
           = navbar_link events_url, 'Events'

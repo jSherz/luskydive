@@ -106,6 +106,9 @@ $header-breakpoint: max-width 40em
     padding: 0
     margin: 0 0.2em
 
+    &.controls
+      display: none
+
     i
       color: $lsd_yellow
 
@@ -124,6 +127,32 @@ $header-breakpoint: max-width 40em
       &:hover
         text-decoration: underline
         background: $navbar-hover-colour
+
+  @include media(max-width 30rem)
+    ul
+      display: block
+
+    li
+      display: none
+      margin: 0
+
+      &.controls
+        display: block
+        background-color: darken($lsd_blue, 20%)
+
+        i
+          margin-right: 0.4em
+
+        a
+          color: #fff
+
+          &:hover
+            color: #fff
+            background-color: $lsd_blue
+            text-decoration: none
+
+    .seperator
+      display: none
 
 // Style for general use of #main div (inside #content)
 #content
