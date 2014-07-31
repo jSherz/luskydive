@@ -2,15 +2,26 @@
   %h2
     FAQs
 
-  - @faq_categories.each do |faq_category|
-    %h3
-      = faq_category.name
+  %h3
+    What do you want to know?
 
-    %ul.faqs
-      - faq_category.faqs.each do |faq|
-        %li
-          %h4
-            %i.fa.fa-comment-o
-            = faq.question
+  %ul#faq-page-list
+    - @faq_categories.each do |faq_category|
+      %li
+        = link_to faq_category, class: ('active' if faq_category.id == @faq_category.id) do
+          = faq_category.name
 
-          = simple_format(raw(faq.answer))
+  %h3
+    = @faq_category.name
+
+  %ul.faqs
+    - @faq_category.faqs.each do |faq|
+      %li
+        %h4
+          %i.fa.fa-comment-o
+          = faq.question
+
+        = raw(faq.answer)
+
+        - if @faq_category.faqs.last != faq
+          %hr

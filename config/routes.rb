@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'events' => 'application#events', as: :events
 
   get 'faqs' => 'application#faqs', as: :faq
+  get 'faqs/:id' => 'application#faqs', as: :faq_category
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
