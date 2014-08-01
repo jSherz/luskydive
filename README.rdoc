@@ -4,7 +4,7 @@ Rails website for the Leeds Uni Skydivers.
 
 === MoSCoW
 
-*Must have*
+==== Must have
 
 * Homepage /w video
 * FAQ page
@@ -16,17 +16,17 @@ Rails website for the Leeds Uni Skydivers.
 * Events loaded from FB group
 * Entire site responsive / mobile friendly
 
-*Should have*
+==== Should have
 
 * Footer social links
 * Google analytics code
 * Video on autostart (to add after development)
 
-*Could have*
+==== Could have
 
 * Dropdown capability for navbar
 * Tab categories in navbar dropdown list
 
-*Would have*
+==== Would have
 
 * Latest tweets and/or status. On homepage?
