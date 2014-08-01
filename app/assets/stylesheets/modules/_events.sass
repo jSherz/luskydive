@@ -25,14 +25,19 @@
 
     .event-icon
       padding-right: 1.2rem
+      width: 7%
 
       i
         font-size: 3rem
         line-height: 1em
 
+      @include media(max-width 28em)
+        width: 15%
+
 
     .event-description
       vertical-align: top
+      width: 92%
 
       h3
         padding-top: 0
@@ -40,6 +45,9 @@
 
       p
         margin: 1rem 0 0 0
+
+      @include media(max-width 28em)
+        width: 83%
 
   .clear
     clear: both
