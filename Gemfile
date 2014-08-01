@@ -50,3 +50,6 @@ gem 'neat'
 group :development do
   gem 'guard-livereload', require: false
 end
+
+# Koala Facebook API
+gem 'koala', '~> 1.10.0rc'
