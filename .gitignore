@@ -16,3 +16,6 @@
 /tmp
 
 /public/assets
+
+# Bundled gems
+/vendor/bundle
