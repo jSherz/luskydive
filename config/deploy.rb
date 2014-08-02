@@ -55,7 +55,16 @@ namespace :deploy do
     end
   end
 
-  after :precompile_assets, :restart
+  after :precompile_assets, :install
+
+  desc 'Install bundled gems'
+  task :install do
+    on roles(:app) do
+      execute "cd #{release_path} && RAILS_ENV=#{fetch(:stage)} bundle install --path vendor/bundle"
+    end
+  end
+
+  after :install, :restart
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
