@@ -6,9 +6,10 @@ set :repo_url, 'git@github.com:jSherz/luskydive.git'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
+set :branch, 'refresh'
 
 # Default deploy_to directory is /var/www/my_app
-set :deploy_to, '/home/site/webapps/luskdyive'
+set :deploy_to, '/home/site/webapps/luskydive'
 
 # Default value for :scm is :git
 # set :scm, :git
@@ -42,6 +43,8 @@ namespace :deploy do
       execute :rake, 'assets:precompile'
     end
   end
+  
+  after :publishing, :precompile_assets
 
   desc 'Restart application'
   task :restart do
@@ -52,7 +55,6 @@ namespace :deploy do
     end
   end
 
-  after :publishing, :precompile_assets
   after :precompile_assets, :restart
 
   after :restart, :clear_cache do
