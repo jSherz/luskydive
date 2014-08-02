@@ -38,33 +38,27 @@ set :deploy_to, '/home/site/webapps/luskydive'
 namespace :deploy do
 
   desc 'Precompiling assets'
-  task :precompile_assets do
+  after :publishing, :precompile_assets do
     on roles(:web), in: :sequence, wait: 5 do
       execute :rake, 'assets:precompile'
     end
   end
-  
-  after :publishing, :precompile_assets
 
+  desc 'Install bundled gems'
+  after :precompile_assets, :bundle do
+    on roles(:app) do
+      run "cd #{release_path} && RAILS_ENV=#{fetch(:stage)} bundle install --path vendor/bundle"
+    end
+  end
+  
   desc 'Restart application'
-  task :restart do
+  after :bundle, :restart do
     on roles(:app), in: :sequence, wait: 5 do
       # Your restart mechanism here, for example:
       # execute :touch, release_path.join('tmp/restart.txt')
       execute :kill, '-HUP `cat pids/unicorn.pid`'
     end
   end
-
-  after :precompile_assets, :install
-
-  desc 'Install bundled gems'
-  task :install do
-    on roles(:app) do
-      execute "cd #{release_path} && RAILS_ENV=#{fetch(:stage)} bundle install --path vendor/bundle"
-    end
-  end
-
-  after :install, :restart
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
