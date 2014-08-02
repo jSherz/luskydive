@@ -35,37 +35,19 @@ set :deploy_to, '/home/site/webapps/luskydive'
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
+set :rbenv_ruby, '2.1.0'
+
 namespace :deploy do
 
-  desc 'Precompiling assets'
-  after :publishing, :precompile_assets do
-    on roles(:web), in: :sequence, wait: 5 do
-      execute :rake, 'assets:precompile'
-    end
-  end
-
-  desc 'Install bundled gems'
-  after :precompile_assets, :bundle do
-    on roles(:app) do
-      run "cd #{release_path} && RAILS_ENV=#{fetch(:stage)} bundle install --path vendor/bundle"
-    end
-  end
+  after :publishing, :compile_assets
+  after :compile_assets, :migrate
   
   desc 'Restart application'
-  after :bundle, :restart do
+  after :migrate, :restart do
     on roles(:app), in: :sequence, wait: 5 do
       # Your restart mechanism here, for example:
       # execute :touch, release_path.join('tmp/restart.txt')
-      execute :kill, '-HUP `cat pids/unicorn.pid`'
-    end
-  end
-
-  after :restart, :clear_cache do
-    on roles(:web), in: :groups, limit: 3, wait: 10 do
-      # Here we can do anything such as:
-      # within release_path do
-      #   execute :rake, 'cache:clear'
-      # end
+      execute :kill, '-HUP `cat pids/unicorn.pid`', raise_on_non_zero_exit: false
     end
   end
 

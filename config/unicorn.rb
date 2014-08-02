@@ -3,7 +3,7 @@ log_path = base_path + 'log/unicorn.log'
 
 working_directory base_path
 
-pid base_path + 'pids/unicorn.pid'
+pid base_path + '../pids/unicorn.pid'
 
 stderr_path log_path
 stdout_path log_path
