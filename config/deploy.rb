@@ -51,4 +51,15 @@ namespace :deploy do
     end
   end
 
+  desc 'Loads DB seeds for sample data'
+  task :seed do
+    on roles(:app) do
+      within release_path do
+        with rails_env: 'production' do
+          execute :rake, 'db:seed'
+        end
+      end
+    end
+  end
+
 end
