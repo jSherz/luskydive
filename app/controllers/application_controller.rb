@@ -15,8 +15,17 @@ class ApplicationController < ActionController::Base
       
       @events = graph.get_connections('18228677368', 'events')
 
+      # Only past week & future events
+      show_from = 1.week.ago
+
+      @events.select! { |event,|
+        DateTime.iso8601(event['start_time']) > show_from
+      }
+
       Rails.cache.write('events', @events, expires_in: 5.minute)
     end
+
+    p @events
   end
 
   def faqs()
