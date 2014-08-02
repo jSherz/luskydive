@@ -20,13 +20,13 @@
           %p
             %strong
               Starts:
-            = event['start_time']
+            = format_fb_datetime(event['start_time'])
 
           - if event['end_time']
             %p
               %strong
                 Ends:
-              = event['end_time']
+              = format_fb_datetime(event['end_time'])
 
           %p
             %strong
