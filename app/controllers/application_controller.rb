@@ -8,8 +8,15 @@ class ApplicationController < ActionController::Base
 
   def events
     # TODO: Replace with dynamic auth string & group ID
-    graph = Koala::Facebook::API.new('CAACEdEose0cBAAn75NbLjaRwyganFmxDp35Aeoqp44vAMZBDlEpkV9JNgtJLolkENvWHaikG8xeClZC6h7bGLNwt6nU3eMvpxxvMNiAkcvP8rxgUeFaAerxWE0BaDDhFkdZBddQ8Vb4QARzN1vWhiLfuJAZCviuYxbjigPp0yJDLYoEWz43PltD5YQdZCHJyIsIzsm5m3ZAQZDZD')
-    @events = graph.get_connections('18228677368', 'events')
+    @events = Rails.cache.fetch('events')
+
+    if @events == nil
+      graph = Koala::Facebook::API.new('CAAH46mWjLUIBAHFz8GRgxuHZCUSR8afY0GmhLkYifr3YUi1tZAZC4hkoBdgf9TjZCdThoRDwr7m67Cz4IVTU21DJCwSivkmZCOJNmQbiarjK2xhXL1ip0ZBb9zFyRYEg2uPL8ZCZAHr8qgjxz63LiUTuvuxuen3UPtX8ZCwwY8nP472gbBgske915jTZCCbZBFRuFUD4tPecnK1pypjkHACw7Cb')
+      
+      @events = graph.get_connections('18228677368', 'events')
+
+      Rails.cache.write('events', @events, expires_in: 5.minute)
+    end
   end
 
   def faqs()

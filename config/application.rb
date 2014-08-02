@@ -21,5 +21,7 @@ module Luskydive
     # config.i18n.default_locale = :de
 
     Koala.config.api_version = 'v2.0'
+
+    config.action_controller.perform_caching = true
   end
 end
