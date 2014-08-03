@@ -1,0 +1,25 @@
+%li
+  .event-icon
+    %i.fa.fa-calendar
+  .event-description
+    %h3
+      = link_to "https://www.facebook.com/events/#{event['id']}" do
+        = event['name']
+   
+    %p
+      %strong
+        Starts:
+      = format_fb_datetime(event['start_time'])
+
+    - if event['end_time']
+      %p
+        %strong
+          Ends:
+        = format_fb_datetime(event['end_time'])
+
+    %p
+      %strong
+        Location:
+      = event['location']
+
+  .clear
