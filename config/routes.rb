@@ -5,10 +5,10 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'application#index'
 
-  get 'events' => 'application#events', as: :events
+  get 'events' => 'events#index', as: :events
 
-  get 'faqs' => 'application#faqs', as: :faq
-  get 'faqs/:id' => 'application#faqs', as: :faq_category
+  get 'faqs' => 'faqs#index', as: :faq
+  get 'faqs/:id' => 'faqs#index', as: :faq_category
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
