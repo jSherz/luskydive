@@ -1,5 +1,5 @@
 class FaqsController < ApplicationController
-  def faqs()
+  def index()
     @faq_categories = FaqCategory.all
 
     id = (params[:id] or @faq_categories.first.id)
