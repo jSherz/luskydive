@@ -1,9 +1,9 @@
-base_path = '/home/site/webapps/luskydive/current/'
+base_path = '/home/site/webapps/luskydive/'
 log_path = base_path + 'log/unicorn.log'
 
-working_directory base_path
+working_directory base_path + 'current/'
 
-pid base_path + '../pids/unicorn.pid'
+pid base_path + 'pids/unicorn.pid'
 
 stderr_path log_path
 stdout_path log_path
