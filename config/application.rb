@@ -23,5 +23,9 @@ module Luskydive
     Koala.config.api_version = 'v2.0'
 
     config.action_controller.perform_caching = true
+
+    # Facebook ID & graph access token for events lookup
+    config.facebook_group_id = '18228677368'
+    config.facebook_access_token = ENV['FACEBOOK_ACCESS_TOKEN']
   end
 end

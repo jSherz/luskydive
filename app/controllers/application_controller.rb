@@ -11,9 +11,9 @@ class ApplicationController < ActionController::Base
     @events = Rails.cache.fetch('events')
 
     if @events == nil
-      graph = Koala::Facebook::API.new('CAAH46mWjLUIBAHFz8GRgxuHZCUSR8afY0GmhLkYifr3YUi1tZAZC4hkoBdgf9TjZCdThoRDwr7m67Cz4IVTU21DJCwSivkmZCOJNmQbiarjK2xhXL1ip0ZBb9zFyRYEg2uPL8ZCZAHr8qgjxz63LiUTuvuxuen3UPtX8ZCwwY8nP472gbBgske915jTZCCbZBFRuFUD4tPecnK1pypjkHACw7Cb')
+      graph = Koala::Facebook::API.new(Rails.application.config.facebook_access_token)
       
-      @events = graph.get_connections('18228677368', 'events')
+      @events = graph.get_connections(Rails.application.config.facebook_group_id, 'events')
 
       # Only past week & future events
       show_from = 1.week.ago
