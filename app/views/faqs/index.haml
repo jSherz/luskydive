@@ -15,13 +15,18 @@
     = @faq_category.name
 
   %ul.faqs
-    - @faq_category.faqs.order('-weighting').each do |faq|
-      %li
-        %h4
-          %i.fa.fa-comment-o
-          = faq.question
+    - unless @faq_category.faqs
+      - @faq_category.faqs.order('-weighting').each do |faq|
+        %li
+          %h4
+            %i.fa.fa-comment-o
+            = faq.question
 
-        = raw(faq.answer)
+          = raw(faq.answer)
 
-        - if @faq_category.faqs.last != faq
-          %hr
+          - if @faq_category.faqs.last != faq
+            %hr
+    - else
+      %li.no-faqs
+        %p
+          Sorry, there are currently no FAQs in this category!
