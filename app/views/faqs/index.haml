@@ -15,7 +15,7 @@
     = @faq_category.name
 
   %ul.faqs
-    - unless @faq_category.faqs
+    - unless @faq_category.faqs.empty?
       - @faq_category.faqs.order('-weighting').each do |faq|
         %li
           %h4
