@@ -41,15 +41,6 @@ namespace :deploy do
 
   after :publishing, :compile_assets
   after :compile_assets, :migrate
-  
-  desc 'Restart application'
-  after :migrate, :restart do
-    on roles(:app), in: :sequence, wait: 5 do
-      # Your restart mechanism here, for example:
-      # execute :touch, release_path.join('tmp/restart.txt')
-      execute :kill, '-HUP `cat pids/unicorn.pid`', raise_on_non_zero_exit: false
-    end
-  end
 
   desc 'Loads DB seeds for sample data'
   task :seed do
