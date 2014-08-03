@@ -42,6 +42,25 @@ namespace :deploy do
   after :publishing, :compile_assets
   after :compile_assets, :migrate
 
+  # Adapted from http://stackoverflow.com/a/9034094/373230
+  desc 'Start unicorn'
+  task :start do
+    on roles(:app) do
+      within shared_path do
+        execute :sh, "#{shared_path}/start.sh"
+      end
+    end
+  end
+
+  desc 'Stop unicorn'
+  task :stop do
+    on roles(:app) do
+      within shared_path do
+        execute :sh, "#{shared_path}/stop.sh"
+      end
+    end
+  end
+
   desc 'Loads DB seeds for sample data'
   task :seed do
     on roles(:app) do
