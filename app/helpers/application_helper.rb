@@ -1,11 +1,15 @@
 module ApplicationHelper
   def navbar_link(url, text)
-    # TODO: Made less awful
+    # Make url into an array if not already
+    urls = [*url]
+
+    active_link = !urls.select { |url,_| current_page? url }.empty?
+
     raw("<li>
           <i class=\"seperator fa fa-ellipsis-v\"></i>
         </li>
         <li>
-          <a href=\"#{url}\"#{' class="active"' if current_page? url}>
+          <a href=\"#{urls.first}\"#{' class="active"' if active_link}>
             #{text}
           </a>
         </li>")
