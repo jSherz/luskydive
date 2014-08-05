@@ -1,5 +1,5 @@
 class MembersController < ApplicationController
   def index
-    @committee = []
+    @committee = CommitteeMember.all.order('-weighting')
   end
 end

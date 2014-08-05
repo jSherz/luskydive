@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140731122154) do
+ActiveRecord::Schema.define(version: 20140805123113) do
+
+  create_table "committee_members", force: true do |t|
+    t.string   "name"
+    t.string   "role"
+    t.integer  "weighting"
+    t.string   "image"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "faq_categories", force: true do |t|
     t.string   "name"

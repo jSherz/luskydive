@@ -3,4 +3,9 @@
   %ul#committee-list
     - @committee.each do |committee_member|
       %li
-        = image_tag committee_member.profile_pic
+        = image_tag committee_member.image
+        
+        %h3
+          = committee_member.name
+        %p.role
+          = committee_member.role
