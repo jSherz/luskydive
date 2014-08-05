@@ -1,0 +1,6 @@
+#members
+  %h2 Committee
+  %ul#committee-list
+    - @committee.each do |committee_member|
+      %li
+        = image_tag committee_member.profile_pic
