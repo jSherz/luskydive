@@ -15,3 +15,10 @@ sample_data['faqs'].each do |faq_category, faqs|
     category.faqs.push new_faq
   end
 end
+
+# Committee
+CommitteeMember.delete_all
+
+sample_data['committee'].each do |committee_member|
+  CommitteeMember.create committee_member
+end
