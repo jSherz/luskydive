@@ -27,5 +27,7 @@ module Luskydive
     # Facebook ID & graph access token for events lookup
     config.facebook_group_id = '18228677368'
     config.facebook_access_token = ENV['FACEBOOK_ACCESS_TOKEN']
+
+    config.facebook_app_id = '555160587939138'
   end
 end
