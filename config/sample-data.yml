@@ -60,56 +60,48 @@ faqs:
   }
 committee: [
   {
-    id: 1,
     name: 'Rebecca Mansfield',
     role: 'President',
     weighting: 100,
     image: 'committee/mansfield.jpg'
   },
   {
-    id: 2,
     name: 'Tom Ravet-Bailey',
     role: 'Vice-Captain',
     weighting: 90,
     image: 'committee/ravet_bailey.jpg'
   },
   {
-    id: 3,
     name: 'Tyler Priestley',
     role: 'RAPs Secretary',
     weighting: 80,
     image: 'committee/priestley.jpg'
   },
   {
-    id: 4,
     name: 'Bethan Walker',
     role: 'Treasurer',
     weighting: 70,
     image: 'committee/walker.jpg'
   },
   {
-    id: 5,
     name: 'Emily Aucutt',
     role: 'Kit Secretary',
     weighting: 60,
     image: 'committee/aucutt.jpg'
   },
   {
-    id: 6,
     name: 'Jack Walker',
     role: 'Social Secretary',
     weighting: 50,
     image: 'committee/walkerj.jpg'
   },
   {
-    id: 7,
     name: 'Jim Dickinson',
     role: 'Social Secretary',
     weighting: 40,
     image: 'committee/dickinson.jpg'
   },
   {
-    id: 8,
     name: 'James S-J',
     role: 'Technology Admin',
     weighting: 30,
