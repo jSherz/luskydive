@@ -108,3 +108,41 @@ committee: [
     image: 'committee/sherwood_jones.jpg'
   }
 ]
+packages: [
+  {
+    title: 'Static line course (RAPS)',
+    description: 'This price includes the whole training course (ground school) and <strong>two</strong> skydives! Mental!',
+    price: 175,
+    active: true,
+    weighting: 100
+  },
+  {
+    title: 'Accelerated Freefall (AFF) Course',
+    description: 'Mo instructors, mo money. It''s not really that expensive, TBH IMO...',
+    price: 999.99,
+    active: true,
+    weighting: 90
+  },
+  {
+    title: 'Jump ticket (static line course student)',
+    description: 'One jump ticket for a static line student.',
+    price: 36,
+    active: true,
+    weighting: 95,
+    requirements: 'You must have completed ground school (Static line course) to use one of these jump tickets.'
+  },
+  {
+    title: 'Tandem skydive',
+    description: 'Experience the ultimate thrill with none of the whole "opening your own parachute" bit!!! WOWZERS.',
+    price: 230,
+    active: true,
+    weighting: 90
+  },
+  {
+    title: 'Jump ticket (experienced skydiver)',
+    description: 'If you''ve qualified and have your A-license, then this is for you!',
+    price: 16,
+    active: true,
+    weighting: 80
+  }
+]

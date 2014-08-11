@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140805123113) do
+ActiveRecord::Schema.define(version: 20140811182057) do
 
   create_table "committee_members", force: true do |t|
     t.string   "name"
@@ -33,6 +33,17 @@ ActiveRecord::Schema.define(version: 20140805123113) do
     t.text     "answer"
     t.integer  "weighting"
     t.integer  "faq_category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "packages", force: true do |t|
+    t.string   "title",        limit: 120
+    t.text     "description"
+    t.decimal  "price",                    precision: 5, scale: 2
+    t.boolean  "active"
+    t.integer  "weighting"
+    t.string   "requirements"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

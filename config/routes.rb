@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   get 'events' => 'events#index', as: :events
 
+  get 'prices' => 'packages#index', as: :packages
+
   get 'faqs' => 'faqs#index', as: :faq
   get 'faqs/:id' => 'faqs#index', as: :faq_category
 

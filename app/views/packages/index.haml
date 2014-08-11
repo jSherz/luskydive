@@ -1,0 +1,26 @@
+%h2
+  Prices
+
+%ul#packages
+  -# Check we've got some packages
+  - unless @packages.empty?
+    -# Loop through all packages
+    - @packages.each do |package|
+      %li
+        .package-info
+          %h3
+            = package.title
+
+          - if package.requirements
+            %p.requirements
+              = package.requirements
+
+          %p
+            = package.description
+
+        .package-price
+          = number_to_currency(package.price, precision: 2)
+
+  - else
+    %li
+      Sorry, there are no packages to display at this time!

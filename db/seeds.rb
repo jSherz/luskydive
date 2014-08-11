@@ -1,10 +1,10 @@
-sample_data = YAML::load_file("#{Rails.root}/config/sample-data.yml")
+@sample_data = YAML::load_file("#{Rails.root}/config/sample-data.yml")
 
 # Frequently asked questions
 Faq.delete_all
 FaqCategory.delete_all
 
-sample_data['faqs'].each do |faq_category, faqs|
+@sample_data['faqs'].each do |faq_category, faqs|
   # Create the category
   category = FaqCategory.create name: faq_category
 
@@ -16,9 +16,16 @@ sample_data['faqs'].each do |faq_category, faqs|
   end
 end
 
-# Committee
-CommitteeMember.delete_all
+def create_items(model_class, yaml_name)
+  model_class.delete_all
 
-sample_data['committee'].each do |committee_member|
-  CommitteeMember.create committee_member
+  @sample_data[yaml_name].each do |item|
+    model_class.create item
+  end
 end
+
+# Committee
+create_items(CommitteeMember, 'committee')
+
+# Packages
+create_items(Package, 'packages')
