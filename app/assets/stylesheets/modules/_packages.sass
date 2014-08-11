@@ -1,4 +1,6 @@
 // Packages
+$packages-breakpoint: max-width 38em
+
 #packages li
   border: solid 0.1em #eee
   padding: 1em
@@ -19,7 +21,16 @@
     text-align: right
     vertical-align: top
 
-  @include media(max-width 38em)
+  .requirements
+    @include flash($notice-color)
+    margin: 1em 1.5em 1em 0
+    padding: 0.5em
+
+    @include media($packages-breakpoint)
+      margin: 0.5em
+
+
+  @include media($packages-breakpoint)
     .package-info, .package-price
       display: block !important
       width: 100%
