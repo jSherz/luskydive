@@ -18,3 +18,18 @@
     font-family: 'Patrick Hand SC', cursive
     text-align: right
     vertical-align: top
+
+  @include media(max-width 38em)
+    .package-info, .package-price
+      display: block !important
+      width: 100%
+
+    .package-info
+      border: 0
+
+    .package-price
+      font-weight: bold
+
+      &:before
+        content: '-- '
+        font-weight: normal
