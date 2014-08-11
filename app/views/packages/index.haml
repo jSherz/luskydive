@@ -1,6 +1,9 @@
 %h2
   Prices
 
+%p
+  Here's a list of everything you can buy through the club. Remember that most of this is subsidised by us and therefore the cheapest you'll ever get it!
+
 %ul#packages
   -# Check we've got some packages
   - unless @packages.empty?
@@ -16,7 +19,7 @@
               = package.requirements
 
           %p
-            = package.description
+            = raw(package.description)
 
         .package-price
           = number_to_currency(package.price, precision: 2)
