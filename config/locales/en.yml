@@ -26,3 +26,13 @@ en:
     currency:
       format:
         unit: £
+
+  activerecord:
+    models:
+      faq:
+        one: FAQ
+        other: FAQs
+
+      faq_category:
+        one: FAQ Category
+        other: FAQ Categories

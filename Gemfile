@@ -58,3 +58,6 @@ end
 
 # Koala Facebook API
 gem 'koala', '~> 1.10.0rc'
+
+# Admin
+gem 'rails_admin'
