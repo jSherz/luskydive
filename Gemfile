@@ -58,7 +58,3 @@ end
 
 # Koala Facebook API
 gem 'koala', '~> 1.10.0rc'
-
-# Admin
-gem 'activeadmin', github: 'gregbell/active_admin'
-gem 'devise'
