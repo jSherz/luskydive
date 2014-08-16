@@ -5,4 +5,6 @@ class Faq < ActiveRecord::Base
   validates :answer, presence: true
   validates :weighting, presence: true
   validates :category, presence: true
+
+  has_paper_trail
 end
