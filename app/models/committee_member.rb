@@ -16,8 +16,10 @@ class CommitteeMember < ActiveRecord::Base
       field :weighting do
         help 'Required. People with higher weightings apear first on the page.'
       end
-      
+
       field :image
     end
+    
+    navigation_icon 'icon-user'
   end
 end

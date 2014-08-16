@@ -6,10 +6,6 @@ RailsAdmin.config do |config|
     navigation_icon 'icon-eye-open'
   end
 
-  config.model 'CommitteeMember' do
-    navigation_icon 'icon-user'
-  end
-
   config.model 'Faq' do
     navigation_icon 'icon-question-sign'
   end
