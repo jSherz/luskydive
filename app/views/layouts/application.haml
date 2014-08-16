@@ -51,6 +51,16 @@
       -# Main content, replaced by child templates
       #content
         %div
+          -# Notices & alerts from Devise
+          - if notice
+            %p.notice
+              = notice
+
+          - if alert
+            %p.alert
+              = alert
+
+          -# App content
           = yield
 
       -# Social icons, copyright etc

@@ -18,13 +18,11 @@ RailsAdmin.config do |config|
     navigation_icon 'icon-tags'
   end
 
-  ### Popular gems integration
-
-  ## == Devise ==
-  # config.authenticate_with do
-  #   warden.authenticate! scope: :user
-  # end
-  # config.current_user_method(&:current_user)
+  # Devise
+  config.authenticate_with do
+    warden.authenticate! scope: :admin
+  end
+  config.current_user_method(&:current_admin)
 
   ## == Cancan ==
   # config.authorize_with :cancan

@@ -61,3 +61,4 @@ gem 'koala', '~> 1.10.0rc'
 
 # Admin
 gem 'rails_admin'
+gem 'devise'
