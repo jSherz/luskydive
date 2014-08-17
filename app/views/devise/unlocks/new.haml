@@ -1,0 +1,19 @@
+#resend_unlock_form.auth_form
+  %h2
+    Resend unlock instructions
+
+  = form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f|
+
+    %ul
+      %li
+        = devise_error_messages!
+
+      %li
+        = f.label :email
+        = f.email_field :email, autofocus: true
+
+      %li
+        = f.submit 'Resend unlock instructions'
+
+  %p.form_links
+    = render 'devise/shared/links'
