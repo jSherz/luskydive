@@ -21,3 +21,5 @@
 /vendor/bundle
 
 /pids
+# Ignore application configuration
+/config/application.yml

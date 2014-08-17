@@ -33,6 +33,9 @@ gem 'spring',        group: :development
 # Use unicorn as the app server
 gem 'unicorn'
 
+# Environment config
+gem 'figaro', github: 'laserlemon/figaro'
+
 # Use Capistrano for deployment
 group :development do
   gem 'capistrano-rails'
