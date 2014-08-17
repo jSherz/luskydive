@@ -17,7 +17,5 @@ class EventsController < ApplicationController
 
       Rails.cache.write('events', @events, expires_in: 5.minute)
     end
-
-    p @events
   end
 end
