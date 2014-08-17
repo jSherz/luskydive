@@ -1,4 +1,6 @@
 class CommitteeMember < ActiveRecord::Base
+  default_scope { order weighting: :desc }
+
   validates :name, presence: true
   validates :role, presence: true
   validates :weighting, presence: true, numericality: { greater_than_or_equal_to: 1, less_than_or_equal_to: 100 }
