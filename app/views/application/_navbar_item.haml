@@ -1,0 +1,6 @@
+%li
+  %i.separator.fa.fa-ellipsis-v
+
+%li{id: li_id || ''}
+  %a{href: @urls.first, class: ('active' if @active_link)}
+    = text
