@@ -30,7 +30,7 @@ set :deploy_to, '/home/site/webapps/luskydive'
 # set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 # Default value for default_env is {}
-set :default_env, { database_url: ENV['DATABASE_URL'] }
+# set :default_env, {}
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
@@ -39,8 +39,13 @@ set :rbenv_ruby, '2.1.0'
 
 namespace :deploy do
 
-  after :publishing, :compile_assets
-  after :compile_assets, :migrate
+  # Adapted from https://github.com/mhutter/capistrano-recipes/blob/master/figaro.rb
+  desc 'Links the production.yml file over for figaro'
+  task :link_figaro_config do
+    on roles(:app) do
+      run 'ln -s #{shared_path}/application.yml #{release_path}/config/application.yml'
+    end
+  end
 
   # Adapted from http://stackoverflow.com/a/9034094/373230
   desc 'Start unicorn'
@@ -71,5 +76,9 @@ namespace :deploy do
       end
     end
   end
+
+  after :publishing, :link_figaro_config
+  after :link_figaro_config, :compile_assets
+  after :compile_assets, :migrate
 
 end

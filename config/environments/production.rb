@@ -85,10 +85,10 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'new.leedsskydivers.co.uk', port: 80 }
 
   config.action_mailer.smtp_settings = {
-    port: ENV['MAILGUN_SMTP_PORT'],
-    address: ENV['MAILGUN_SMTP_SERVER'],
-    user_name: ENV['MAILGUN_SMTP_LOGIN'],
-    password: ENV['MAILGUN_SMTP_PASSWORD'],
+    port: Figaro.env.mailgun_smtp_port,
+    address: Figaro.env.mailgun_smtp_server,
+    user_name: Figaro.env.mailgun_smtp_login,
+    password: Figaro.env.mailgun_smtp_password,
     domain: 'leedsskydivers.co.uk',
     authentication: 'plain'
   }

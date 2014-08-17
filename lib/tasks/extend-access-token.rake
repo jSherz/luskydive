@@ -10,7 +10,7 @@ task :extend_fb_token do
   token = STDIN.gets
 
   if token
-    oauth = Koala::Facebook::OAuth.new(Rails.application.config.facebook_app_id, ENV["FACEBOOK_APP_SECRET"])
+    oauth = Koala::Facebook::OAuth.new(Rails.application.config.facebook_app_id, Figaro.env.facebook_app_secret)
 
     extended_token = oauth.exchange_access_token(token)
 
