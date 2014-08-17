@@ -15,8 +15,8 @@
     = @faq_category.name
 
   %ul.faqs
-    - unless @faq_category.faqs.empty?
-      - @faq_category.faqs.order('-weighting').each do |faq|
+    - unless @faqs.empty?
+      - @faqs.each do |faq|
         %li
           %h4
             %i.fa.fa-comment-o
@@ -24,7 +24,7 @@
 
           = raw(faq.answer)
 
-          - if @faq_category.faqs.last != faq
+          - unless faq == @faq_category.faqs.last
             %hr
     - else
       %li.no-faqs
