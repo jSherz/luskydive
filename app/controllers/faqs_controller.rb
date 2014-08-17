@@ -1,9 +1,9 @@
 class FaqsController < ApplicationController
-  def index()
+  def index
     @faq_categories = FaqCategory.all
 
-    id = (params[:id] or @faq_categories.first.id)
+    id = params[:id] || @faq_categories.first.id
 
-    @faq_category = @faq_categories.find(id.to_i)
+    @faq_category = @faq_categories.find id
   end
 end
