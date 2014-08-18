@@ -1,7 +1,8 @@
 /*
  * Events
  */
-
+$events-bp-medium: max-width 50em
+$events-bp-small: max-width 20em
 
 #events
   h2
@@ -13,6 +14,8 @@
     margin: 1em 0 1.3em 0
 
 #events-list
+  overflow: hidden
+
   li
     list-style: none
     padding: 0 0 1em 0
@@ -31,8 +34,8 @@
         font-size: 3rem
         line-height: 1em
 
-      @include media(max-width 28em)
-        width: 15%
+      @include media($events-bp-medium)
+        width: 11%
 
 
     .event-description
@@ -46,8 +49,23 @@
       p
         margin: 1rem 0 0 0
 
-      @include media(max-width 28em)
-        width: 83%
+      @include media($events-bp-medium)
+        width: 88%
 
   .clear
     clear: both
+
+#events-feature
+  float: right
+  width: 20em
+  margin-left: 1em
+
+  @include media(max-width 45em)
+    margin: 1em auto
+    clear: both
+    width: auto
+    display: block
+
+  @include media(max-width 50em)
+    #events-list
+      overflow: visible
