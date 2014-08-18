@@ -2,7 +2,7 @@
  * Events
  */
 $events-bp-medium: max-width 50em
-$events-bp-small: max-width 20em
+$events-bp-small: max-width 30em
 
 #events
   h2
@@ -37,6 +37,9 @@ $events-bp-small: max-width 20em
       @include media($events-bp-medium)
         width: 11%
 
+      @include media($events-bp-small)
+        width: 20%
+
 
     .event-description
       vertical-align: top
@@ -51,6 +54,9 @@ $events-bp-small: max-width 20em
 
       @include media($events-bp-medium)
         width: 88%
+
+      @include media($events-bp-small)
+        width: 79%
 
   .clear
     clear: both
