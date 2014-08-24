@@ -2,10 +2,6 @@ RailsAdmin.config do |config|
 
   config.main_app_name = 'LSD'
 
-  config.model 'Admin' do
-    navigation_icon 'icon-eye-open'
-  end
-
   config.model 'Faq' do
     navigation_icon 'icon-question-sign'
   end
