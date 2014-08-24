@@ -37,9 +37,7 @@ class Faq < ActiveRecord::Base
         end
       end
 
-      configure :versions do
-        hide
-      end
+      exclude_fields :versions
     end
     
     navigation_icon 'icon-question-sign'
