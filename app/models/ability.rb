@@ -30,7 +30,6 @@ class Ability
     # https://github.com/ryanb/cancan/wiki/Defining-Abilities
 
     # Action groups
-    alias_action :read, :update, :export, :history, to: :read_update_export
     alias_action :read, :update, :history, to: :read_update
 
     # Allow access to rails admin
@@ -38,11 +37,17 @@ class Ability
     can :dashboard
 
     # Assign basic permissions
-    can :read_update_export, CommitteeMember
-    can :read_update, Admin
+    superadmin = user and user.is_role? :superadmin
 
-    # Superuser permissions
-    if user and user.is_role? :superadmin
+    [CommitteeMember, Admin, Faq, FaqCategory, Package].each do |model|
+      can :read_update, model
+
+      if superadmin
+        can :manage, model
+      end
+    end
+
+    if superadmin
       can :manage, :version
     end
   end
