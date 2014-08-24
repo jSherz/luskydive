@@ -45,6 +45,7 @@ GEM
       sass (~> 3.2)
       thor
     builder (3.2.2)
+    cancan (1.6.10)
     capistrano (3.2.1)
       i18n
       rake (>= 10.0.0)
@@ -253,6 +254,7 @@ PLATFORMS
 DEPENDENCIES
   bitters
   bourbon
+  cancan
   capistrano-bundler
   capistrano-rails
   capistrano-rbenv

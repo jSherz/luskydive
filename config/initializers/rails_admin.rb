@@ -20,10 +20,10 @@ RailsAdmin.config do |config|
   end
   config.current_user_method(&:current_admin)
 
-  ## == Cancan ==
-  # config.authorize_with :cancan
+  # Cancan
+  config.authorize_with :cancan
 
-  ## == PaperTrail ==
+  # PaperTrail
   config.audit_with :paper_trail, 'Admin', 'PaperTrail::Version' # PaperTrail >= 3.0.0
 
   ### More at https://github.com/sferik/rails_admin/wiki/Base-configuration

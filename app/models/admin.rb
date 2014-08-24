@@ -4,15 +4,30 @@ class Admin < ActiveRecord::Base
   devise :database_authenticatable, :lockable, :timeoutable,
          :rememberable, :trackable, :validatable
 
+  def is_role? role
+    self.role.to_s == role.to_s
+  end
+
   has_paper_trail
+
+  own_account_or_superuser = Proc.new do
+    current_admin = bindings[:controller].current_admin
+    # Only show password if this is the current user or superadmin
+    current_admin == bindings[:object] || current_admin.is_role?(:superadmin)
+  end
 
   rails_admin do
     edit do
       group :logging_in do
         field :email
-        field :password
+        
+        field :password do
+          visible own_account_or_superuser
+        end
+
         field :password_confirmation do
           label 'Confirm password'
+          visible own_account_or_superuser
         end
       end
 
@@ -27,6 +42,10 @@ class Admin < ActiveRecord::Base
         field :failed_attempts
         field :unlock_token
         field :locked_at
+      end
+
+      group :permissions do
+        field :role
       end
     end
 
