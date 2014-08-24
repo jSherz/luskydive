@@ -1,5 +1,10 @@
 #members
   %h2 Committee
+
+  %p
+    We're the guys & gals that are here to get you in the air! Need to get in touch?
+    = link_to 'Contact us.', contact_url
+
   %ul#committee-list
     - @committee.each do |committee_member|
       %li
