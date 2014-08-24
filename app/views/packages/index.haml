@@ -14,7 +14,7 @@
           %h3
             = package.title
 
-          - if package.requirements
+          - unless package.requirements.to_s.empty?
             %p.requirements
               = package.requirements
 
