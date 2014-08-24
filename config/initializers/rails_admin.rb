@@ -2,10 +2,6 @@ RailsAdmin.config do |config|
 
   config.main_app_name = 'LSD'
 
-  config.model 'Faq' do
-    navigation_icon 'icon-question-sign'
-  end
-
   config.model 'FaqCategory' do
     navigation_icon 'icon-list-alt'
   end
