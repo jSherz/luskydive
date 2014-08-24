@@ -11,6 +11,27 @@ class CommitteeMember < ActiveRecord::Base
   has_paper_trail
 
   rails_admin do
+    list do
+      field :name
+      field :role
+      field :weighting do
+        sort_reverse true
+      end
+
+      sort_by :weighting
+    end
+
+    show do
+      configure :image do
+        formatted_value do
+          bindings[:view].tag(:img, {
+            src: bindings[:view].image_path(bindings[:object].image),
+            style: 'width: 20em'
+          })
+        end
+      end
+    end
+
     edit do
       field :name
       field :role
