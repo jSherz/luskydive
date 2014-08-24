@@ -32,16 +32,39 @@ class Admin < ActiveRecord::Base
       end
 
       group :security_info do
-        active false # Collapse by default
+        #active false # Collapse by default
 
-        field :sign_in_count
-        field :current_sign_in_at
-        field :last_sign_in_at
-        field :current_sign_in_ip
-        field :last_sign_in_ip
-        field :failed_attempts
-        field :unlock_token
-        field :locked_at
+        field :sign_in_count do
+          help 'Automatic. The number of times this user has logged in.'
+        end
+
+        field :failed_attempts do
+          help 'Automatic. The number of failed attempts that have been made to login to this account.'
+        end
+
+        field :current_sign_in_at do
+          help 'Automatic. The date & time the user signed in for their current session.'
+        end
+
+        field :last_sign_in_at do
+          help 'Automatic. The date & time the user signed in before this session.'
+        end
+
+        field :current_sign_in_ip do
+          help 'Automatic. The IP address the user logged in with for their current session.'
+        end
+
+        field :last_sign_in_ip do
+          help 'Automatic. The IP address the user last logged in with before this session.'
+        end
+
+        field :locked_at do
+          help 'Automatic. The date & time that this account was locked at (if it is locked).'
+        end
+
+        field :unlock_token do
+          help 'Automatic. A token that will be used to unlock this account. E-mailed to the user.'
+        end
       end
 
       group :permissions do
