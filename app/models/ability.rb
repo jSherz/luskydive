@@ -37,7 +37,7 @@ class Ability
     can :dashboard
 
     # Assign basic permissions
-    superadmin = user and user.is_role? :superadmin
+    superadmin = user && user.is_role?(:superadmin)
 
     [CommitteeMember, Admin, Faq, FaqCategory, Package].each do |model|
       can :read_update, model
