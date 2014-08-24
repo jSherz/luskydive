@@ -32,7 +32,7 @@ class Admin < ActiveRecord::Base
       end
 
       group :security_info do
-        #active false # Collapse by default
+        active false # Collapse by default
 
         field :sign_in_count do
           help 'Automatic. The number of times this user has logged in.'
