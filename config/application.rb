@@ -29,5 +29,10 @@ module Luskydive
     config.facebook_access_token = Figaro.env.facebook_access_token
 
     config.facebook_app_id = '555160587939138'
+
+    config.facebook_group_url = 'https://www.facebook.com/groups/shockabrah'
+    config.facebook_page_url = 'https://www.facebook.com/leedsuniskydivers'
+    config.twitter_url = 'https://twitter.com/LeedsSkyDivers'
+    config.club_email = 'info@leedsuniskydivers.co.uk'
   end
 end

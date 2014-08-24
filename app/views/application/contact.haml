@@ -9,7 +9,7 @@
 
   %dl
     %dt
-      = link_to 'Facebook group', 'https://www.facebook.com/groups/shockabrah/'
+      = link_to 'Facebook group', Rails.application.config.facebook_group_url
     %dd
       Join our group and a member of the committee should message you letting you know about how to get involved with the club. Make sure that you check your
       %strong
@@ -17,16 +17,16 @@
       folder as that's where it will most likely end up! Post in the group or message a member of the committee (see the list on the right).
 
     %dt
-      = link_to 'Twitter', 'https://twitter.com/LeedsSkyDivers'
+      = link_to 'Twitter', Rails.application.config.twitter_url
     %dd
       Tweet us a question!
 
     %dt
-      = link_to 'Facebook page', 'https://www.facebook.com/leedsuniskydivers'
+      = link_to 'Facebook page', Rails.application.config.facebook_page_url
     %dd
       Like our page then send us a message.
 
     %dt
-      = link_to 'E-mail', 'mailto:leedsuniskydivers@example.org'
+      = link_to 'E-mail', "mailto:#{Rails.application.config.club_email}"
     %dd
       If nothing above works for you, send us an e-mail.

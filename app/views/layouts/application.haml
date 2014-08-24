@@ -23,11 +23,11 @@
               Leeds Uni
             Skydivers
           #twitter-icon
-            = link_to 'https://twitter.com/LeedsSkyDivers' do
+            = link_to Rails.application.config.twitter_url do
               %i.fa.fa-twitter-square
               
           #facebook-icon
-            = link_to 'https://www.facebook.com/groups/shockabrah' do
+            = link_to Rails.application.config.facebook_group_url do
               %i.fa.fa-facebook-square
 
       -# Navigation
