@@ -2,10 +2,6 @@ RailsAdmin.config do |config|
 
   config.main_app_name = 'LSD'
 
-  config.model 'Package' do
-    navigation_icon 'icon-tags'
-  end
-
   # Devise
   config.authenticate_with do
     warden.authenticate! scope: :admin
