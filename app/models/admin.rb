@@ -17,6 +17,25 @@ class Admin < ActiveRecord::Base
   end
 
   rails_admin do
+    list do
+      field :email
+      field :failed_attempts
+      field :current_sign_in_at
+    end
+
+    show do
+      field :email
+      
+      field :failed_attempts
+      field :sign_in_count
+
+      field :current_sign_in_at
+      field :last_sign_in_at
+
+      field :current_sign_in_ip
+      field :last_sign_in_ip
+    end
+
     edit do
       group :logging_in do
         field :email
