@@ -20,7 +20,7 @@ class Admin < ActiveRecord::Base
     edit do
       group :logging_in do
         field :email
-        
+
         field :password do
           visible own_account_or_superuser
         end
@@ -46,6 +46,10 @@ class Admin < ActiveRecord::Base
 
       group :permissions do
         field :role
+
+        visible do
+          bindings[:controller].current_admin.is_role?(:superuser)
+        end
       end
     end
 
