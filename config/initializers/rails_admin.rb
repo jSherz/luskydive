@@ -2,10 +2,6 @@ RailsAdmin.config do |config|
 
   config.main_app_name = 'LSD'
 
-  config.model 'FaqCategory' do
-    navigation_icon 'icon-list-alt'
-  end
-
   config.model 'Package' do
     navigation_icon 'icon-tags'
   end
