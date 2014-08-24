@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   get 'faqs' => 'faqs#index', as: :faq
   get 'faqs/:id' => 'faqs#index', as: :faq_category
 
-  get 'members' => 'members#index', as: :members
+  get 'committee' => 'members#index', as: :members
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
