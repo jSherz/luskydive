@@ -36,3 +36,15 @@ en:
       faq_category:
         one: FAQ Category
         other: FAQ Categories
+
+  admin:
+    help:
+      admin:
+        sign_in_count: 'Automatic. The number of times this user has logged in.'
+        failed_attempts: 'Automatic. The number of failed attempts that have been made to login to this account.'
+        current_sign_in_at: 'Automatic. The date & time the user signed in for their current session.'
+        last_sign_in_at: 'Automatic. The date & time the user signed in before this session.'
+        current_sign_in_ip: 'Automatic. The IP address the user logged in with for their current session.'
+        last_sign_in_ip: 'Automatic. The IP address the user last logged in with before this session.'
+        locked_at: 'Automatic. The date & time that this account was locked at (if it is locked).'
+        unlock_token: 'Automatic. A token that will be used to unlock this account. E-mailed to the user.'
