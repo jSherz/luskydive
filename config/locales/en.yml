@@ -51,3 +51,9 @@ en:
 
       committee_member:
         weighting: 'Required. People with higher weightings apear first on the page.'
+
+      package:
+        price: 'Required. The price of the item (without pound symbol).'
+        active: 'Active can be unchecked to hide items that are no longer available (e.g. offers).'
+        weighting: 'Required. Items with higher weightings appear first.'
+        requirements: 'Optional. Length up to 255. If this item requires something (e.g. an A licence) enter it here.'

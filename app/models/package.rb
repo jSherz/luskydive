@@ -15,22 +15,6 @@ class Package < ActiveRecord::Base
     end
 
     edit do
-      configure :price do
-        help 'Required. The price of the item (without pound symbol).'
-      end
-
-      configure :active do
-        help 'Active can be unchecked to hide items that are no longer available (e.g. offers).'
-      end
-
-      configure :weighting do
-        help 'Required. Items with higher weightings appear first.'
-      end
-
-      configure :requirements do
-        help 'Optional. Length up to 255. If this item requires something (e.g. an A licence) enter it here.'
-      end
-
       exclude_fields :versions
     end
 
