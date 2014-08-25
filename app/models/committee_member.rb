@@ -35,11 +35,7 @@ class CommitteeMember < ActiveRecord::Base
     edit do
       field :name
       field :role
-
-      field :weighting do
-        help 'Required. People with higher weightings apear first on the page.'
-      end
-
+      field :weighting
       field :image
     end
     

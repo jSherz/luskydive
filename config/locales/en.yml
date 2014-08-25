@@ -48,3 +48,6 @@ en:
         last_sign_in_ip: 'Automatic. The IP address the user last logged in with before this session.'
         locked_at: 'Automatic. The date & time that this account was locked at (if it is locked).'
         unlock_token: 'Automatic. A token that will be used to unlock this account. E-mailed to the user.'
+
+      committee_member:
+        weighting: 'Required. People with higher weightings apear first on the page.'
