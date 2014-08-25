@@ -67,3 +67,9 @@ gem 'rails_admin'
 gem 'devise'
 gem 'paper_trail', '~> 3.0.3'
 gem 'cancan'
+
+# Rubocop code inspection
+group :development do
+  gem 'rubocop'
+  gem 'guard-rubocop'
+end
