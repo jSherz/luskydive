@@ -1,3 +1,4 @@
+# Members of the club's committee
 class CommitteeMember < ActiveRecord::Base
   default_scope { order weighting: :desc }
 
@@ -24,10 +25,10 @@ class CommitteeMember < ActiveRecord::Base
     show do
       configure :image do
         formatted_value do
-          bindings[:view].tag(:img, {
-            src: bindings[:view].image_path(bindings[:object].image),
-            style: 'width: 20em'
-          })
+          bindings[:view].tag(:img,
+                              src: bindings[:view].image_path(bindings[:object].image),
+                              style: 'width: 20em'
+                             )
         end
       end
     end
@@ -38,7 +39,7 @@ class CommitteeMember < ActiveRecord::Base
       field :weighting
       field :image
     end
-    
+
     navigation_icon 'icon-user'
   end
 end

@@ -1,3 +1,4 @@
+# Questions that provide general info about the club & sport
 class Faq < ActiveRecord::Base
   belongs_to :category, class_name: 'FaqCategory', foreign_key: 'faq_category_id'
 
@@ -39,7 +40,7 @@ class Faq < ActiveRecord::Base
 
       exclude_fields :versions
     end
-    
+
     navigation_icon 'icon-question-sign'
   end
 end

@@ -1,3 +1,4 @@
+# Items that are available to be purchased through the club
 class Package < ActiveRecord::Base
   default_scope { where active: true }
   default_scope { order weighting: :desc }

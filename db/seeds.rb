@@ -1,4 +1,4 @@
-@sample_data = YAML::load_file("#{Rails.root}/config/sample-data.yml")
+@sample_data = YAML.load_file("#{Rails.root}/config/sample-data.yml")
 
 # Frequently asked questions
 Faq.delete_all

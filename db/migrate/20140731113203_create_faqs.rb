@@ -1,3 +1,4 @@
+# Creates the table used to store FAQs
 class CreateFaqs < ActiveRecord::Migration
   def change
     create_table :faqs do |t|

@@ -1,3 +1,4 @@
+# Creates the table that stores committee members
 class CreateCommitteeMembers < ActiveRecord::Migration
   def change
     create_table :committee_members do |t|

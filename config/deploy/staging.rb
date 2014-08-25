@@ -6,10 +6,9 @@ set :rails_env, 'production'
 # is considered to be the first unless any hosts have the primary
 # property set.  Don't declare `role :all`, it's a meta role.
 
-role :app, %w{jsj-pi}
-role :web, %w{jsj-pi}
-role :db,  %w{jsj-pi}
-
+role :app, %w(jsj-pi)
+role :web, %w(jsj-pi)
+role :db,  %w(jsj-pi)
 
 # Extended Server Syntax
 # ======================
@@ -17,8 +16,7 @@ role :db,  %w{jsj-pi}
 # server list. The second argument is a, or duck-types, Hash and is
 # used to set extended properties on the server.
 
-server 'jsj-pi', user: 'site', roles: %w{web app db}
-
+server 'jsj-pi', user: 'site', roles: %w(web app db)
 
 # Custom SSH Options
 # ==================
@@ -27,10 +25,10 @@ server 'jsj-pi', user: 'site', roles: %w{web app db}
 #
 # Global options
 # --------------
-set :ssh_options, {
-  keys: %w(/home/james/.ssh/jsj_linux),
-  auth_methods: %w(publickey)
-}
+set :ssh_options,
+    keys: %w(/home/james/.ssh/jsj_linux),
+    auth_methods: %w(publickey)
+
 #
 # And/or per server (overrides global)
 # ------------------------------------

@@ -1,3 +1,4 @@
+# Adds the packages table, used to describe what you can buy through the club
 class CreatePackages < ActiveRecord::Migration
   def change
     create_table :packages do |t|

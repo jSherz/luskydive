@@ -1,3 +1,4 @@
+# FAQ categories that organise FAQ entries
 class FaqCategory < ActiveRecord::Base
   has_many :faqs, class_name: 'Faq', dependent: :destroy
 
@@ -24,7 +25,7 @@ class FaqCategory < ActiveRecord::Base
         pretty_value do
           view = bindings[:view]
 
-          [value].flatten.select(&:present?).collect do |faq|
+          [value].flatten.select(&:present?).map do |faq|
             view.link_to(faq.question, view.url_for(action: :show, model_name: :faq, id: faq.id), class: 'pjax')
           end.to_sentence.html_safe
         end

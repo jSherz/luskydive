@@ -1,16 +1,18 @@
+# Admins (Devise)
 class Admin < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :lockable, :timeoutable,
          :rememberable, :trackable, :validatable
 
-  def is_role? role
+  # rubocop:disable Style/PredicateName
+  def is_role?(role)
     self.role.to_s == role.to_s
   end
 
   has_paper_trail
 
-  own_account_or_superuser = Proc.new do
+  own_account_or_superuser = proc do
     current_admin = bindings[:controller].current_admin
     # Only show password if this is the current user or superadmin
     current_admin == bindings[:object] || current_admin.is_role?(:superadmin)
@@ -25,7 +27,7 @@ class Admin < ActiveRecord::Base
 
     show do
       field :email
-      
+
       field :failed_attempts
       field :sign_in_count
 
