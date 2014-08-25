@@ -1,5 +1,10 @@
 AllCops:
   RunRailsCops: true
 
+  Exclude:
+    - 'db/**/*'
+    - 'bin/**/*'
+    - 'Guardfile'
+
 Metrics/LineLength:
   Max: 120
