@@ -132,6 +132,10 @@ $header-breakpoint: max-width 40em
     &#join-lsd-btn a
       color: #009B00
 
+  @include media(max-width 70rem)
+    .separator
+      display: none
+
   @include media(max-width 30rem)
     ul
       display: block
@@ -154,9 +158,6 @@ $header-breakpoint: max-width 40em
             color: #fff
             background-color: $lsd_blue
             text-decoration: none
-
-    .separator
-      display: none
 
 // Style for general use of #main div (inside #content)
 #content
