@@ -1,10 +1,12 @@
-== Leeds Uni SkydiversS
+Leeds Uni Skydivers
+===================
 
 Rails website for the Leeds Uni Skydivers society.
 
-=== MoSCoW
+MoSCoW
+------
 
-==== Must have
+### Must have
 
 - [x] Homepage /w video
 - [x] FAQ page
@@ -17,35 +19,53 @@ Rails website for the Leeds Uni Skydivers society.
 - [ ] Entire site responsive / mobile friendly
 - [ ] Tests!
 
-==== Should have
+### Should have
 
 - [x] Social links
 - [ ] Google analytics code
 - [x] Video on autostart (to add after development)
 - [ ] Ability to upload images for committee members
 
-==== Could have
+### Could have
 
 - [ ] Dropdown capability for navbar
 - [ ] Tab categories in navbar dropdown list
 - [ ] FAQ category URL slug (to replace ID)
 - [ ] Fake tabs on the FAQ page (better than a list)
 
-==== Would have
+### Would have
 
 - [ ] Latest tweets and/or status. On homepage?
 
-=== Configuration
+Configuration
+-------------
 
-==== Figaro environmental variables (config/production.yml)
+### Figaro environmental variables (config/production.yml)
 
-* facebook_access_token -> extended oauth token (user, not app) to use when making requests
-* facebook_app_secret -> application secret for making requests
-* database_url -> connstring for MySQL DB
-* secret_key_base -> Rails secret key base
-* mailgun_smtp_port -> SMTP server port
-* mailgun_smtp_server -> SMTP server hostname
-* mailgun_smtp_login -> SMTP server login
-* mailgun_smtp_password -> SMTP server password
-* devise_secret_key -> key for devise to use when generating session tokens etc
-* devise_pepper -> devise secret for password encryption
+- Extended oauth token (user, not application) to use when getting events:
+
+        facebook_access_token
+
+- Application secret when querying FB API:
+
+        facebook_app_secret
+
+- Connection string for the application DB (MySQL):
+
+        database_url
+
+- Rails secret key base:
+
+        secret_key_base
+
+- mailgun settings (SMTP):
+
+        mailgun_smtp_port
+        mailgun_smtp_server
+        mailgun_smtp_login
+        mailgun_smtp_password
+
+- Keys for devise to use when generating session tokens & encrypting passwords etc
+
+        devise_secret_key
+        devise_pepper
