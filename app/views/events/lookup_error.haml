@@ -1,0 +1,9 @@
+#events
+  %h2
+    Events
+
+  %p.alert
+    Unfortunately, we couldn't get the latest events from our
+    = succeed '.' do
+      = link_to 'Facebook group', Rails.application.config.facebook_group_url
+    Please check there to make sure you don't miss anything!
