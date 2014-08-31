@@ -5,8 +5,10 @@ Faq.delete_all
 FaqCategory.delete_all
 
 @sample_data['faqs'].each do |faq_category, faqs|
+  name, urlslug = faq_category
+
   # Create the category
-  category = FaqCategory.create name: faq_category
+  category = FaqCategory.create name: name, urlslug: urlslug
 
   # Add all of the FAQs
   faqs.each do |faq|

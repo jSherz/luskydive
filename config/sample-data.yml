@@ -1,6 +1,6 @@
 faqs:
   {
-    'General FAQs': [
+    ['General FAQs', 'general']: [
       {
         question: 'How much does it cost to join?',
         answer: '<p>£35.00 for the year, entitling you to cheaper socials, jump ticket deals and kit hire rates.</p>',
@@ -40,7 +40,7 @@ faqs:
         weighting: 75
       }
     ],
-    'RAPs FAQs': [
+    ['RAPs FAQs', 'raps']: [
       {
         question: 'How much does each jump cost?',
         answer: '<p>We aim to subsidise training jumps down to £36.00 and experienced jumps to £16.00 or less this year.</p>',
