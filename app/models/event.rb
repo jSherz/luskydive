@@ -2,14 +2,10 @@
 class Event
   # Get & cache events
   def self.all
-    @events = Rails.cache.fetch('events')
-
-    # Bail if we failed to get any events
-    return [] if @events.nil?
-
     graph = Koala::Facebook::API.new(Rails.application.config.facebook_access_token)
 
-    @events = graph.get_connections(Rails.application.config.facebook_group_id, 'events')
+    # Get cached events or retrieve from FB
+    @events = Rails.cache.fetch('events') || graph.get_connections(Rails.application.config.facebook_group_id, 'events')
 
     # Only past week & future events
     show_from = 1.week.ago
