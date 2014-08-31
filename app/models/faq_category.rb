@@ -3,6 +3,7 @@ class FaqCategory < ActiveRecord::Base
   has_many :faqs, class_name: 'Faq', dependent: :destroy
 
   validates :name, presence: true
+  validates :urlslug, presence: true, length: { in: 3..20 }
 
   has_paper_trail
 
