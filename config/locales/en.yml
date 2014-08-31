@@ -59,4 +59,7 @@ en:
         requirements: 'Optional. Length up to 255. If this item requires something (e.g. an A licence) enter it here.'
 
       faq_category:
-        urlslug: 'Required. Length of 3-20. How the FAQ category will be identified in links. For example, http://lsd.com/faqs/raps-faqs.'
+        urlslug: >
+                  Required. Length of 3-20. How the FAQ category will be identified in links.
+                  For example, http://lsd.com/faqs/raps-faqs.
+                  Only numbers, letters, dashes & underscores are allowed.
