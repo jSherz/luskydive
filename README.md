@@ -60,10 +60,10 @@ Configuration
 
 - mailgun settings (SMTP):
 
-        mailgun_smtp_port
-        mailgun_smtp_server
-        mailgun_smtp_login
-        mailgun_smtp_password
+        smtp_port
+        smtp_server
+        smtp_login
+        smtp_password
 
 - Keys for devise to use when generating session tokens & encrypting passwords etc
 
