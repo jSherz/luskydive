@@ -3,9 +3,18 @@ class FaqsController < ApplicationController
   def index
     @faq_categories = FaqCategory.all
 
-    id = params[:id] || @faq_categories.first.id
+    @faq_category = @faq_categories.first
 
-    @faq_category = @faq_categories.find id
     @faqs = @faq_category.faqs
+  end
+
+  def show
+    @faq_categories = FaqCategory.all
+
+    @faq_category = @faq_categories.where(urlslug: params[:urlslug])[0]
+
+    @faqs = @faq_category.faqs
+
+    render 'index'
   end
 end

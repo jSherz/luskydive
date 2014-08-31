@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get 'prices' => 'packages#index', as: :packages
 
   get 'faqs' => 'faqs#index', as: :faq
-  get 'faqs/:id' => 'faqs#index', as: :faq_category
+  get 'faqs/:urlslug' => 'faqs#show', as: :faq_category
 
   get 'committee' => 'members#index', as: :members
 
