@@ -35,5 +35,11 @@ module Luskydive
     config.facebook_page_url = 'https://www.facebook.com/leedsuniskydivers'
     config.twitter_url = 'https://twitter.com/LeedsSkyDivers'
     config.club_email = 'info@leedsuniskydivers.co.uk'
+
+    # Check for required ENV vars
+    Figaro.require_keys 'facebook_access_token', 'facebook_app_secret', 'secret_key_base',
+                        'database_host', 'database_user', 'database_pass', 'database_name',
+                        'smtp_port', 'smtp_server', 'smtp_login', 'smtp_password',
+                        'devise_secret_key', 'devise_pepper'
   end
 end
