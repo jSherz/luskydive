@@ -7,6 +7,11 @@ class FaqCategory < ActiveRecord::Base
 
   has_paper_trail
 
+  # Return URL slug rather than ID for links
+  def to_param
+    urlslug
+  end
+
   rails_admin do
     list do
       field :name
@@ -21,6 +26,9 @@ class FaqCategory < ActiveRecord::Base
 
     show do
       field :name
+      field :urlslug do
+        label 'URL Slug'
+      end
 
       field :faqs do
         pretty_value do
@@ -35,6 +43,11 @@ class FaqCategory < ActiveRecord::Base
 
     edit do
       field :name
+
+      field :urlslug do
+        label 'URL Slug'
+      end
+
       field :faqs
     end
 
