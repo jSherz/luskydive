@@ -13,22 +13,23 @@
         = link_to faq_category, class: ('active' if faq_category.id == @faq_category.id) do
           = faq_category.name
 
-  %h3
-    = @faq_category.name
+  #faq-list
+    %h3
+      = @faq_category.name
 
-  %ul.faqs
-    - unless @faqs.empty?
-      - @faqs.each do |faq|
-        %li
-          %h4
-            %i.fa.fa-comment-o
-            = faq.question
+    %ul.faqs
+      - unless @faqs.empty?
+        - @faqs.each do |faq|
+          %li
+            %h4
+              %i.fa.fa-comment-o
+              = faq.question
 
-          = raw(faq.answer)
+            = raw(faq.answer)
 
-          - unless faq == @faq_category.faqs.last
-            %hr
-    - else
-      %li.no-faqs
-        %p
-          Sorry, there are currently no FAQs in this category!
+            - unless faq == @faq_category.faqs.last
+              %hr
+      - else
+        %li.no-faqs
+          %p
+            Sorry, there are currently no FAQs in this category!
