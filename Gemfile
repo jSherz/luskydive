@@ -64,7 +64,7 @@ gem 'koala', '~> 1.10.0rc'
 # Admin
 gem 'rails_admin'
 gem 'devise'
-gem 'paper_trail', '~> 3.0.3'
+gem 'paper_trail', '~> 3.0.5'
 gem 'cancan'
 
 # Rubocop code inspection
