@@ -9,7 +9,7 @@ set :repo_url, 'git@github.com:jSherz/luskydive.git'
 set :branch, 'refresh'
 
 # Default deploy_to directory is /var/www/my_app
-set :deploy_to, '/home/site/webapps/luskydive'
+set :deploy_to, '/home/luskydive/site'
 
 # Default value for :scm is :git
 # set :scm, :git
