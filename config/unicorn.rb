@@ -1,4 +1,4 @@
-base_path = '/home/site/webapps/luskydive/'
+base_path = '/home/luskydive/site/'
 log_path = base_path + 'log/unicorn.log'
 
 working_directory base_path + 'current/'
