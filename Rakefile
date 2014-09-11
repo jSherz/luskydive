@@ -2,11 +2,7 @@
 # For example: lib/tasks/capistrano.rake
 
 require File.expand_path('../config/application', __FILE__)
-
-# Only load rubocop if we're running in dev
-if Rails.env = 'development'
-  require 'rubocop/rake_task'
-end
+require 'rubocop/rake_task'
 
 Rails.application.load_tasks
 RuboCop::RakeTask.new

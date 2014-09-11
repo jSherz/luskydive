@@ -56,6 +56,7 @@ gem 'neat'
 # Live refresh
 group :development do
   gem 'guard-livereload', require: false
+  gem 'guard-rubocop'
 end
 
 # Koala Facebook API
@@ -68,7 +69,4 @@ gem 'paper_trail', '~> 3.0.5'
 gem 'cancan'
 
 # Rubocop code inspection
-group :development do
-  gem 'rubocop'
-  gem 'guard-rubocop'
-end
+gem 'rubocop'
