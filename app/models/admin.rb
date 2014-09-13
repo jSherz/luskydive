@@ -5,9 +5,8 @@ class Admin < ActiveRecord::Base
   devise :database_authenticatable, :lockable, :timeoutable,
          :rememberable, :trackable, :validatable
 
-  # rubocop:disable Style/PredicateName
-  def is_role?(role)
-    self.role.to_s == role.to_s
+  def superadmin?
+    role.to_sym == :superadmin
   end
 
   has_paper_trail
@@ -15,7 +14,7 @@ class Admin < ActiveRecord::Base
   own_account_or_superuser = proc do
     current_admin = bindings[:controller].current_admin
     # Only show password if this is the current user or superadmin
-    current_admin == bindings[:object] || current_admin.is_role?(:superadmin)
+    current_admin == bindings[:object] || current_admin.superadmin?
   end
 
   rails_admin do
@@ -69,7 +68,7 @@ class Admin < ActiveRecord::Base
         field :role
 
         visible do
-          bindings[:controller].current_admin.is_role?(:superuser)
+          bindings[:controller].current_admin.superadmin?
         end
       end
     end
