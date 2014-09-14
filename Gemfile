@@ -70,3 +70,6 @@ gem 'cancan'
 
 # Rubocop code inspection
 gem 'rubocop'
+
+# File uploads
+gem 'carrierwave'
