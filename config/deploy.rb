@@ -27,7 +27,7 @@ set :deploy_to, '/home/luskydive/site'
 set :linked_files, %w(config/application.yml)
 
 # Default value for linked_dirs is []
-# set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+set :linked_dirs, %w(public/uploads log)
 
 # Default value for default_env is {}
 # set :default_env, {}
