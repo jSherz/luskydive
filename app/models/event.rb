@@ -1,21 +1,26 @@
 # Retrieves Facebook events for the society group page.
 class Event
-  # Get & cache events
+  # Get cached events or retrieve from FB
   def self.all
-    graph = Koala::Facebook::API.new(Rails.application.config.facebook_access_token)
+    Rails.cache.fetch('events') || all_events
+  end
 
-    # Get cached events or retrieve from FB
-    @events = Rails.cache.fetch('events') || graph.get_connections(Rails.application.config.facebook_group_id, 'events')
+  private
+
+  def graph
+    @graph ||= Koala::Facebook::API.new(Rails.application.config.facebook_access_token)
+  end
+
+  def all_events
+    @graph.get_connections(Rails.application.config.facebook_group_id, 'events')
 
     # Only past week & future events
-    show_from = 1.week.ago
-
     @events.select! do |event, |
-      DateTime.iso8601(event['start_time']) > show_from
+      DateTime.iso8601(event['start_time']) > 1.week.ago
     end
 
     # Cache events lookup
-    Rails.cache.write('events', @events, expires_in: 5.minute)
+    Rails.cache.write('events', @events, expires_in: 5.minute) if @events
 
     @events
   end
