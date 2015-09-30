@@ -14,7 +14,7 @@ task :extend_fb_token do
 
     extended_token = oauth.exchange_access_token(token)
 
-    puts "New token valid until #{DateTime.now + 59.days}\n\n"
+    puts "New token valid until #{DateTime.now.current + 59.days}\n\n"
     puts extended_token
   else
     puts 'Quit - no token entered!'

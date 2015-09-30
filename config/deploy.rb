@@ -38,7 +38,6 @@ set :linked_dirs, %w(public/uploads log)
 set :rbenv_ruby, '2.1.0'
 
 namespace :deploy do
-
   after :publishing, :compile_assets
   after :compile_assets, :migrate
 
@@ -71,5 +70,4 @@ namespace :deploy do
       end
     end
   end
-
 end

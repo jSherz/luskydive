@@ -10,7 +10,7 @@ class Event
     @events = graph.get_connections(Rails.application.config.facebook_group_id, 'events')
 
     # Only past week & future events
-    @events.select! do |event, |
+    @events.select! do |event|
       DateTime.iso8601(event['start_time']) > 1.week.ago
     end
 
