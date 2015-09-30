@@ -2,9 +2,6 @@ Rails.application.routes.draw do
   devise_for :admins
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
-  # First created -> highest priority.
-  # See your routes with "rake routes".
-
   root 'application#index'
 
   get 'about-the-club' => 'application#about', as: :about
@@ -19,5 +16,4 @@ Rails.application.routes.draw do
   get 'committee' => 'members#index', as: :members
 
   get 'contact' => 'application#contact'
-
 end
