@@ -34,7 +34,7 @@ module Luskydive
     config.facebook_group_url = 'https://www.facebook.com/groups/shockabrah'
     config.facebook_page_url = 'https://www.facebook.com/leedsuniskydivers'
     config.twitter_url = 'https://twitter.com/LeedsSkyDivers'
-    config.club_email = 'info@leedsuniskydivers.co.uk'
+    config.club_email = 'leedsskydivers@gmail.com'
 
     # Check for required ENV vars
     Figaro.require_keys 'facebook_access_token', 'facebook_app_secret', 'secret_key_base',
