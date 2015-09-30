@@ -5,14 +5,9 @@ class Event
     Rails.cache.fetch('events') || all_events
   end
 
-  private
-
-  def graph
-    @graph ||= Koala::Facebook::API.new(Rails.application.config.facebook_access_token)
-  end
-
-  def all_events
-    @graph.get_connections(Rails.application.config.facebook_group_id, 'events')
+  def self.all_events
+    graph = Koala::Facebook::API.new(Rails.application.config.facebook_access_token)
+    @events = graph.get_connections(Rails.application.config.facebook_group_id, 'events')
 
     # Only past week & future events
     @events.select! do |event, |
